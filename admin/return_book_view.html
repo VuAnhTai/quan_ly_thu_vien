@@ -177,7 +177,7 @@
                             <div class="col-sm-8">
                                 <a style="text-decoration: none; color: inherit;" href="Users_view.php">
                                     <h1 style="margin-top: 0px">
-                                        <img src="images/application_from_storage.png"> Issued
+                                        <img src="images/application_side_expand.png"> Returned
                                     </h1>
                                 </a>
                             </div>
@@ -288,204 +288,186 @@
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Book_Issue-issue_id" checked=""> Issue id</label>
+                                                <input type="checkbox" data-col="Return_Book-Book_Number" checked=""> Book Number</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Book_Issue-Member" checked=""> Member</label>
+                                                <input type="checkbox" data-col="Return_Book-Book_Title" checked=""> Book Title</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Book_Issue-Number" checked=""> Number</label>
+                                                <input type="checkbox" data-col="Return_Book-Issue_Date" checked=""> Issue Date</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Book_Issue-Book_Number" checked=""> Book Number</label>
+                                                <input type="checkbox" data-col="Return_Book-Due_Date" checked=""> Due Date</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Book_Issue-Book_Title" checked=""> Book Title</label>
+                                                <input type="checkbox" data-col="Return_Book-Return_Date" checked=""> Return Date</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Book_Issue-Issue_Date" checked=""> Issue Date</label>
+                                                <input type="checkbox" data-col="Return_Book-Member" checked=""> Member</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Book_Issue-Return_Date" checked=""> Return Date</label>
+                                                <input type="checkbox" data-col="Return_Book-Number" checked=""> Number</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Book_Issue-Status" checked=""> Status</label>
+                                                <input type="checkbox" data-col="Return_Book-Fine" checked=""> Fine</label>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-default btn-block collapsed" id="toggle-columns-collapser"
-                                        data-toggle="collapse" data-target="#toggle-columns-container" aria-expanded="false">
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Return_Book-Status" checked=""> Status</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-default btn-block" id="toggle-columns-collapser" data-toggle="collapse" data-target="#toggle-columns-container"
+                                        aria-expanded="true">
                                         <i class="glyphicon glyphicon-ok"></i> Ok</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                <!-- /bottons -->
-                <!-- table -->
+                    <!-- /bottons -->
+                    <!-- table -->
 
-                <div class="table_view col-xs-12 ">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th style="width: 18px;" class="text-center">
-                                        <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
-                                    </th>
-                                    <th class="Book_Issue-issue_id">
-                                        <a href="#" class="TableHeader">Issue id
-                                            <i class="text-warning glyphicon glyphicon-sort-by-attributes"></i>
-                                        </a>
-                                    </th>
-                                    <th class="Book_Issue-Member">
-                                        <a href="#" class="TableHeader">Member</a>
-                                    </th>
-                                    <th class="Book_Issue-Number">
-                                        <a href="#" class="TableHeader">Number</a>
-                                    </th>
-                                    <th class="Book_Issue-Book_Number">
-                                        <a href="#" class="TableHeader">Book Number</a>
-                                    </th>
-                                    <th class="Book_Issue-Book_Title">
-                                        <a href="#" class="TableHeader">Book Title</a>
-                                    </th>
-                                    <th class="Book_Issue-Issue_Date">
-                                        <a href="#" class="TableHeader">Issue Date</a>
-                                    </th>
-                                    <th class="Book_Issue-Return_Date">
-                                        <a href="#" class="TableHeader">Return Date</a>
-                                    </th>
-                                    <th class="Book_Issue-Status">
-                                        <a href="#" class="TableHeader">Status</a>
-                                    </th>
-                
-                                </tr>
-                
-                            </thead>
-                
-                            <tbody>
-                                <!-- tv data below -->
-                                <tr>
-                                    <td class="text-center">
-                                        <input class="hidden-print record_selector" type="checkbox" id="record_selector_1" name="record_selector[]" value="1">
-                                    </td>
-                
-                                    <td id="Book_Issue-issue_id-1" class="Book_Issue-issue_id">
-                                        <a href="Book_Issue_view.php?SelectedID=1" style="display: block; padding:0px;">1</a>
-                                    </td>
-                                    <td id="Book_Issue-Member-1" class="Book_Issue-Member">
-                                        <a href="Book_Issue_view.php?SelectedID=1" style="display: block; padding:0px;">Kelvin Guma</a>
-                                    </td>
-                                    <td id="Book_Issue-Number-1" class="Book_Issue-Number">
-                                        <a href="Book_Issue_view.php?SelectedID=1" style="display: block; padding:0px;">1231</a>
-                                    </td>
-                                    <td id="Book_Issue-Book_Number-1" class="Book_Issue-Book_Number">
-                                        <a href="Book_Issue_view.php?SelectedID=1" style="display: block; padding:0px;">62781733</a>
-                                    </td>
-                                    <td id="Book_Issue-Book_Title-1" class="Book_Issue-Book_Title">
-                                        <a href="Book_Issue_view.php?SelectedID=1" style="display: block; padding:0px;">River Between</a>
-                                    </td>
-                                    <td id="Book_Issue-Issue_Date-1" class="Book_Issue-Issue_Date">
-                                        <a href="Book_Issue_view.php?SelectedID=1" style="display: block; padding:0px;">02/24/2018</a>
-                                    </td>
-                                    <td id="Book_Issue-Return_Date-1" class="Book_Issue-Return_Date">
-                                        <a href="Book_Issue_view.php?SelectedID=1" style="display: block; padding:0px;">02/24/2018</a>
-                                    </td>
-                                    <td id="Book_Issue-Status-1" class="Book_Issue-Status">
-                                        <a href="Book_Issue_view.php?SelectedID=1" style="display: block; padding:0px;">returned</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">
-                                        <input class="hidden-print record_selector" type="checkbox" id="record_selector_2" name="record_selector[]" value="2">
-                                    </td>
-                                    <td id="Book_Issue-issue_id-2" class="Book_Issue-issue_id">
-                                        <a href="Book_Issue_view.php?SelectedID=2" style="display: block; padding:0px;">2</a>
-                                    </td>
-                                    <td id="Book_Issue-Member-2" class="Book_Issue-Member">
-                                        <a href="Book_Issue_view.php?SelectedID=2" style="display: block; padding:0px;">Dennis Amadi</a>
-                                    </td>
-                                    <td id="Book_Issue-Number-2" class="Book_Issue-Number">
-                                        <a href="Book_Issue_view.php?SelectedID=2" style="display: block; padding:0px;">2000</a>
-                                    </td>
-                                    <td id="Book_Issue-Book_Number-2" class="Book_Issue-Book_Number">
-                                        <a href="Book_Issue_view.php?SelectedID=2" style="display: block; padding:0px;">978-9966-111-32-6</a>
-                                    </td>
-                                    <td id="Book_Issue-Book_Title-2" class="Book_Issue-Book_Title">
-                                        <a href="Book_Issue_view.php?SelectedID=2" style="display: block; padding:0px;">Who is Jesus</a>
-                                    </td>
-                                    <td id="Book_Issue-Issue_Date-2" class="Book_Issue-Issue_Date">
-                                        <a href="Book_Issue_view.php?SelectedID=2" style="display: block; padding:0px;">02/24/2018</a>
-                                    </td>
-                                    <td id="Book_Issue-Return_Date-2" class="Book_Issue-Return_Date">
-                                        <a href="Book_Issue_view.php?SelectedID=2" style="display: block; padding:0px;">03/01/2018</a>
-                                    </td>
-                                    <td id="Book_Issue-Status-2" class="Book_Issue-Status">
-                                        <a href="Book_Issue_view.php?SelectedID=2" style="display: block; padding:0px;">issued</a>
-                                    </td>
-                                </tr>
-                                <!-- tv data above -->
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="9">Records 1 to 2 of 2</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div class="row pagination-section">
-                        <div class="col-xs-4 col-md-3 col-lg-2 vspacer-lg">
-                            <button onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value = 1; return true;" type="submit" name="Previous_x"
-                                id="Previous" value="1" class="btn btn-default btn-block">
-                                <i class="glyphicon glyphicon-chevron-left"></i>
-                                <span class="hidden-xs">Previous</span>
-                            </button>
+                    <div class="table_view col-xs-12 ">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 18px;" class="text-center">
+                                            <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
+                                        </th>
+                                        <th class="Return_Book-Book_Number">
+                                            <a href="Return_Book_view.php?SortDirection=asc&amp;SortField=2" class="TableHeader">Book Number</a>
+                                        </th>
+                                        <th class="Return_Book-Book_Title">
+                                            <a href="Return_Book_view.php?SortDirection=asc&amp;SortField=3" class="TableHeader">Book Title</a>
+                                        </th>
+                                        <th class="Return_Book-Issue_Date">
+                                            <a href="Return_Book_view.php?SortDirection=asc&amp;SortField=4" class="TableHeader">Issue Date</a>
+                                        </th>
+                                        <th class="Return_Book-Due_Date">
+                                            <a href="Return_Book_view.php?SortDirection=asc&amp;SortField=5" class="TableHeader">Due Date</a>
+                                        </th>
+                                        <th class="Return_Book-Return_Date">
+                                            <a href="Return_Book_view.php?SortDirection=asc&amp;SortField=6" class="TableHeader">Return Date</a>
+                                        </th>
+                                        <th class="Return_Book-Member">
+                                            <a href="Return_Book_view.php?SortDirection=asc&amp;SortField=7" class="TableHeader">Member</a>
+                                        </th>
+                                        <th class="Return_Book-Number">
+                                            <a href="Return_Book_view.php?SortDirection=asc&amp;SortField=8" class="TableHeader">Number</a>
+                                        </th>
+                                        <th class="Return_Book-Fine">
+                                            <a href="Return_Book_view.php?SortDirection=asc&amp;SortField=9" class="TableHeader">Fine</a>
+                                        </th>
+                                        <th class="Return_Book-Status">
+                                            <a href="Return_Book_view.php?SortDirection=asc&amp;SortField=10" class="TableHeader">Status</a>
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+                                    <!-- tv data below -->
+                                    <tr>
+                                        <td class="text-center">
+                                            <input class="hidden-print record_selector" type="checkbox" id="record_selector_1"
+                                                name="record_selector[]" value="1">
+                                        </td>
+
+                                        <td id="Return_Book-Book_Number-1" class="Return_Book-Book_Number">
+                                            <a href="Return_Book_view.php?SelectedID=1" style="display: block; padding:0px;">62781733</a>
+                                        </td>
+                                        <td id="Return_Book-Book_Title-1" class="Return_Book-Book_Title">
+                                            <a href="Return_Book_view.php?SelectedID=1" style="display: block; padding:0px;">River Between</a>
+                                        </td>
+                                        <td id="Return_Book-Issue_Date-1" class="Return_Book-Issue_Date">
+                                            <a href="Return_Book_view.php?SelectedID=1" style="display: block; padding:0px;">02/24/2018</a>
+                                        </td>
+                                        <td id="Return_Book-Due_Date-1" class="Return_Book-Due_Date">
+                                            <a href="Return_Book_view.php?SelectedID=1" style="display: block; padding:0px;">02/24/2018</a>
+                                        </td>
+                                        <td id="Return_Book-Return_Date-1" class="Return_Book-Return_Date">
+                                            <a href="Return_Book_view.php?SelectedID=1" style="display: block; padding:0px;">03/04/2018</a>
+                                        </td>
+                                        <td id="Return_Book-Member-1" class="Return_Book-Member">
+                                            <a href="Return_Book_view.php?SelectedID=1" style="display: block; padding:0px;">Kelvin Guma</a>
+                                        </td>
+                                        <td id="Return_Book-Number-1" class="Return_Book-Number">
+                                            <a href="Return_Book_view.php?SelectedID=1" style="display: block; padding:0px;">1231</a>
+                                        </td>
+                                        <td id="Return_Book-Fine-1" class="Return_Book-Fine text-right">
+                                            <a href="Return_Book_view.php?SelectedID=1" style="display: block; padding:0px;">50.00</a>
+                                        </td>
+                                        <td id="Return_Book-Status-1" class="Return_Book-Status">
+                                            <a href="Return_Book_view.php?SelectedID=1" style="display: block; padding:0px;">cleared</a>
+                                        </td>
+                                    </tr>
+                                    <!-- tv data above -->
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="10">Records 1 to 1 of 1</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
-                        <div class="col-xs-4 col-md-4 col-lg-2 col-md-offset-1 col-lg-offset-3 text-center vspacer-lg"></div>
-                        <div class="col-xs-4 col-md-3 col-lg-2 col-md-offset-1 col-lg-offset-3 text-right vspacer-lg">
-                            <button class="hidden-xs">Next</span>
-                                <i class="glyphicon glyphicon-chevron-right"></i>
-                            </button>
+                        <div class="row pagination-section">
+                            <div class="col-xs-4 col-md-3 col-lg-2 vspacer-lg">
+                                <button onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value = 1; return true;" type="submit" name="Previous_x"
+                                    id="Previous" value="1" class="btn btn-default btn-block">
+                                    <i class="glyphicon glyphicon-chevron-left"></i>
+                                    <span class="hidden-xs">Previous</span>
+                                </button>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-2 col-md-offset-1 col-lg-offset-3 text-center vspacer-lg"></div>
+                            <div class="col-xs-4 col-md-3 col-lg-2 col-md-offset-1 col-lg-offset-3 text-right vspacer-lg">
+                                <button class="hidden-xs">Next</span>
+                                    <i class="glyphicon glyphicon-chevron-right"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    <!-- /table -->
+
+
                 </div>
-                <!-- /table -->
-
+                <!-- /.container-fluid -->
 
             </div>
-            <!-- /.container-fluid -->
+            <!-- /#page-wrapper -->
 
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /#wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
 </body>
 
