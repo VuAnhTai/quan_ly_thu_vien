@@ -169,15 +169,15 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Dashboard
-                            <small>Thống kê tổng quát</small>
+                            3T_LIBRARY
+                            <small>Control Panel </small>
                         </h1>
 
                         <div class="row">
                             <div class="col-sm-8">
                                 <a style="text-decoration: none; color: inherit;" href="Users_view.php">
                                     <h1 style="margin-top: 0px">
-                                        <i class="fa fa-user"></i> Users
+                                        <i class="fa fa-book"></i> Books
                                     </h1>
                                 </a>
                             </div>
@@ -287,27 +287,64 @@
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Users-Membership_Number" checked=""> Membership Number</label>
+                                                <input type="checkbox" data-col="Books-ISBN_NO" checked=""> ISBN NO</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Users-Name" checked=""> Name</label>
+                                                <input type="checkbox" data-col="Books-Book_Title" checked=""> Book Title</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Users-Contact" checked=""> Contact</label>
+                                                <input type="checkbox" data-col="Books-Book_Type" checked=""> Book Type</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Users-ID_Number" checked=""> ID Number</label>
+                                                <input type="checkbox" data-col="Books-Author_Name" checked=""> Author Name</label>
                                         </div>
                                     </div>
+                                     <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Books-Quantity" checked=""> Quantity</label>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Books-Purchase_Date" checked=""> Purchase Date</label>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Books-Edition" checked=""> Edition</label>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Books-Price" checked=""> Price</label>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Books-Pages" checked=""> Pages</label>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Books-Publisher" checked=""> Publisher</label>
+                                        </div>
+                                    </div>
+
                                     <button type="button" class="btn btn-default btn-block" id="toggle-columns-collapser"
                                         data-toggle="collapse" data-target="#toggle-columns-container">
                                         <i class="glyphicon glyphicon-ok"></i> Ok</button>
@@ -329,19 +366,36 @@
                                     <th style="width: 18px;" class="text-center">
                                         <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
                                     </th>
-                                    <th class="Users-Membership_Number">
-                                            <a href="#" class="TableHeader">Membership Number</a>
+                                    <th class="Books-ISBN_NO">
+                                            <a href="#" class="TableHeader">ISBN NO</a>
                                     </th>
-                                    <th class="Users-Name">
-                                        <a href="#" class="TableHeader">Name</a>
+                                    <th class="Books-Book_Title">
+                                        <a href="#" class="TableHeader">Book Title</a>
                                     </th>
-                                    <th class="Users-Contact">
-                                        <a href="#" class="TableHeader">Contact</a>
+                                    <th class="Books-Book_Type">
+                                        <a href="#" class="TableHeader">Book Type</a>
                                     </th>
-                                    <th class="Users-ID_Number">
-                                        <a href="#" class="TableHeader">ID Number</a>
+                                    <th class="Books-Author_Name">
+                                        <a href="#" class="TableHeader">Author Name</a>
                                     </th>
-
+                                    <th class="Books-Quantity">
+                                        <a href="#" class="TableHeader">Quantity</a>
+                                    </th>
+                                    <th class="Books-Purchase_Date">
+                                        <a href="#" class="TableHeader">Purchase Date</a>
+                                    </th>
+                                    <th class="Books-Edition">
+                                        <a href="#" class="TableHeader">Edition</a>
+                                    </th>
+                                    <th class="Books-Price">
+                                        <a href="#" class="TableHeader">Price</a>
+                                    </th>
+                                    <th class="Books-Pages">
+                                        <a href="#" class="TableHeader">Pages</a>
+                                    </th>
+                                    <th class="Books-Publisher">
+                                        <a href="#" class="TableHeader">Publisher</a>
+                                    </th>
                                 </tr>
 
                             </thead>
@@ -355,42 +409,121 @@
                                     </td>
 
 
-                                    <td id="Users-Membership_Number-1" class="Users-Membership_Number">
-                                        <a href="#" style="display: block; padding:0px;">1231</a>
+                                    <td id="Books-ISBN_NO-1" class="Books-ISBN_NO">
+                                        <a href="#" style="display: block; padding:0px;">62781733</a>
                                     </td>
-                                    <td id="Users-Name-1" class="Users-Name">
-                                        <a href="#" style="display: block; padding:0px;">Kelvin Guma</a>
+                                    <td id="Books-Book_Title-1" class="Users-Name">
+                                        <a href="#" style="display: block; padding:0px;">River Between</a>
                                     </td>
-                                    <td id="Users-Contact-1" class="Users-Contact">
-                                        <a href="#" style="display: block; padding:0px;">0708344101</a>
+                                    <td id="Books-Book_Type-1" class="Books-Book_Type">
+                                        <a href="#" style="display: block; padding:0px;">novel</a>
                                     </td>
-                                    <td id="Users-ID_Number-1" class="Users-ID_Number text-right">
-                                        <a href="#" style="display: block; padding:0px;">99239183</a>
+                                    <td id="Books-Author_Name-1" class="Books-Author_Name ">
+                                        <a href="#" style="display: block; padding:0px;">Ngugi wa Thiongo</a>
                                     </td>
+                                    <td id="Books-Quantity-1" class="Books-Quantity text-right">
+                                        <a href="#" style="display: block; padding:0px;">33</a>
+                                    </td>
+                                    <td id="Books-Purchase_Date-1" class="Books-Purchase_Date ">
+                                        <a href="#" style="display: block; padding:0px;">02/24/2018</a>
+                                    </td>
+                                    <td id="Books-Edition-1" class="Books-Edition ">
+                                        <a href="#" style="display: block; padding:0px;">1</a>
+                                    </td>
+                                    <td id="Books-Price-1" class="Books-Price text-right">
+                                        <a href="#" style="display: block; padding:0px;">300.00</a>
+                                    </td>
+                                    <td id="Books-Pages-1" class="Books-Pages text-right">
+                                        <a href="#" style="display: block; padding:0px;">120</a>
+                                    </td>
+                                    <td id="Books-Publisher-1" class="Books-Publisher ">
+                                        <a href="#" style="display: block; padding:0px;">Longhorn</a>
+                                    </td>
+
                                 </tr>
                                 <tr>
                                     <td class="text-center">
-                                        <input class="hidden-print record_selector" type="checkbox" id="record_selector_2" name="record_selector[]"
-                                            value="2">
+                                        <input class="hidden-print record_selector" type="checkbox" id="record_selector_1" name="record_selector[]"
+                                            value="1">
                                     </td>
-                                    <td id="Users-Membership_Number-2" class="Users-Membership_Number">
-                                        <a href="#" style="display: block; padding:0px;">2000</a>
+
+
+                                    <td id="Books-ISBN_NO-1" class="Books-ISBN_NO">
+                                        <a href="#" style="display: block; padding:0px;">978-9966-111-32-6</a>
                                     </td>
-                                    <td id="Users-Name-2" class="Users-N0ame">
-                                        <a href="#" style="display: block; padding:0px;">Dennis Amadi</a>
+                                    <td id="Books-Book_Title-1" class="Users-Name">
+                                        <a href="#" style="display: block; padding:0px;">Who is Jesus</a>
                                     </td>
-                                    <td id="Users-Contact-2" class="Users-Contact">
-                                        <a href="#" style="display: block; padding:0px;">079822271</a>
+                                    <td id="Books-Book_Type-1" class="Books-Book_Type">
+                                        <a href="#" style="display: block; padding:0px;">short stories</a>
                                     </td>
-                                    <td id="Users-ID_Number-2" class="Users-ID_Number text-right">
-                                        <a href="#" style="display: block; padding:0px;">33432113</a>
+                                    <td id="Books-Author_Name-1" class="Books-Author_Name ">
+                                        <a href="#" style="display: block; padding:0px;">Greg Gilbert</a>
                                     </td>
+                                    <td id="Books-Quantity-1" class="Books-Quantity text-right">
+                                        <a href="#" style="display: block; padding:0px;">1</a>
+                                    </td>
+                                    <td id="Books-Purchase_Date-1" class="Books-Purchase_Date ">
+                                        <a href="#" style="display: block; padding:0px;">02/24/2018</a>
+                                    </td>
+                                    <td id="Books-Edition-1" class="Books-Edition ">
+                                        <a href="#" style="display: block; padding:0px;">1</a>
+                                    </td>
+                                    <td id="Books-Price-1" class="Books-Price text-right">
+                                        <a href="#" style="display: block; padding:0px;">800.00</a>
+                                    </td>
+                                    <td id="Books-Pages-1" class="Books-Pages text-right">
+                                        <a href="#" style="display: block; padding:0px;">138</a>
+                                    </td>
+                                    <td id="Books-Publisher-1" class="Books-Publisher ">
+                                        <a href="#" style="display: block; padding:0px;">ekklesia afrika</a>
+                                    </td>
+
+                                </tr>
+                                 <tr>
+                                    <td class="text-center">
+                                        <input class="hidden-print record_selector" type="checkbox" id="record_selector_1" name="record_selector[]"
+                                            value="1">
+                                    </td>
+
+
+                                    <td id="Books-ISBN_NO-1" class="Books-ISBN_NO">
+                                        <a href="#" style="display: block; padding:0px;">978-0-8308-5810-1</a>
+                                    </td>
+                                    <td id="Books-Book_Title-1" class="Users-Name">
+                                        <a href="#" style="display: block; padding:0px;">Pauls Prison Letters</a>
+                                    </td>
+                                    <td id="Books-Book_Type-1" class="Books-Book_Type">
+                                        <a href="#" style="display: block; padding:0px;">novel</a>
+                                    </td>
+                                    <td id="Books-Author_Name-1" class="Books-Author_Name ">
+                                        <a href="#" style="display: block; padding:0px;">Smith</a>
+                                    </td>
+                                    <td id="Books-Quantity-1" class="Books-Quantity text-right">
+                                        <a href="#" style="display: block; padding:0px;">23</a>
+                                    </td>
+                                    <td id="Books-Purchase_Date-1" class="Books-Purchase_Date ">
+                                        <a href="#" style="display: block; padding:0px;">02/24/2018</a>
+                                    </td>
+                                    <td id="Books-Edition-1" class="Books-Edition ">
+                                        <a href="#" style="display: block; padding:0px;"></a>
+                                    </td>
+                                    <td id="Books-Price-1" class="Books-Price text-right">
+                                        <a href="#" style="display: block; padding:0px;">450.00</a>
+                                    </td>
+                                    <td id="Books-Pages-1" class="Books-Pages text-right">
+                                        <a href="#" style="display: block; padding:0px;">133</a>
+                                    </td>
+                                    <td id="Books-Publisher-1" class="Books-Publisher ">
+                                        <a href="#" style="display: block; padding:0px;">IVP cONNECT</a>
+                                    </td>
+
                                 </tr>
                                 <!-- tv data above -->
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan="5">Records 1 to 2 of 2</td>
+                                    <td colspan="11">Records 1 to 3 of 3</td>
                                 </tr>
                             </tfoot>
                         </table>
