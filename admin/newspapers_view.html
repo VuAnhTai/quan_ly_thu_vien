@@ -169,15 +169,15 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Dashboard
-                            <small>Thống kê tổng quát</small>
+                            3T_LIBRARY
+                            <small>Control Panel </small>
                         </h1>
 
                         <div class="row">
                             <div class="col-sm-8">
                                 <a style="text-decoration: none; color: inherit;" href="Users_view.php">
                                     <h1 style="margin-top: 0px">
-                                        <i class="fa fa-user"></i> Users
+                                        <i class="fa fa-newspaper-o"></i> NewsPapers
                                     </h1>
                                 </a>
                             </div>
@@ -287,25 +287,49 @@
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Users-Membership_Number" checked=""> Membership Number</label>
+                                                <input type="checkbox" data-col="Newspapers-Language" checked=""> Language</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Users-Name" checked=""> Name</label>
+                                                <input type="checkbox" data-col="Newspapers-Name" checked=""> Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Users-Contact" checked=""> Contact</label>
+                                                <input type="checkbox" data-col="Newspapers-Date_Of_Receipt" checked=""> Date Of Receipt</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" data-col="Users-ID_Number" checked=""> ID Number</label>
+                                                <input type="checkbox" data-col="Newspapers-Date_Published" checked=""> Date Published</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Newspapers-Pages" checked=""> Pages</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Newspapers-Price" checked=""> Price</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Newspapers-Type" checked=""> Type</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Newspapers-Publisher" checked=""> Publisher</label>
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-default btn-block" id="toggle-columns-collapser"
@@ -329,19 +353,31 @@
                                     <th style="width: 18px;" class="text-center">
                                         <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
                                     </th>
-                                    <th class="Users-Membership_Number">
-                                            <a href="#" class="TableHeader">Membership Number</a>
+                                    <th class="Newspapers-Language">
+                                        <a href="#" class="TableHeader">Language</a>
                                     </th>
-                                    <th class="Users-Name">
+                                    <th class="Newspapers-Name">
                                         <a href="#" class="TableHeader">Name</a>
                                     </th>
-                                    <th class="Users-Contact">
-                                        <a href="#" class="TableHeader">Contact</a>
+                                    <th class="Newspapers-Date_Of_Receipt">
+                                        <a href="#" class="TableHeader">Date Of Receipt</a>
                                     </th>
-                                    <th class="Users-ID_Number">
-                                        <a href="#" class="TableHeader">ID Number</a>
+                                    <th class="Newspapers-Date_Published">
+                                        <a href="#" class="TableHeader">Date Published</a>
                                     </th>
-
+                                    <th class="Newspapers-Pages">
+                                        <a href="#" class="TableHeader">Pages</a>
+                                    </th>
+                                    <th class="Newspapers-Price">
+                                        <a href="#" class="TableHeader">Price</a>
+                                    </th>
+                                    <th class="Newspapers-Type">
+                                        <a href="#" class="TableHeader">Type</a>
+                                    </th>
+                                    <th class="Newspapers-Publisher">
+                                        <a href="#" class="TableHeader">Publisher</a>
+                                    </th>
+                         
                                 </tr>
 
                             </thead>
@@ -355,42 +391,38 @@
                                     </td>
 
 
-                                    <td id="Users-Membership_Number-1" class="Users-Membership_Number">
-                                        <a href="#" style="display: block; padding:0px;">1231</a>
+                                    <td id="Newspapers-Language-1" class="Newspapers-Language">
+                                        <a href="#" style="display: block; padding:0px;">English</a>
                                     </td>
-                                    <td id="Users-Name-1" class="Users-Name">
-                                        <a href="#" style="display: block; padding:0px;">Kelvin Guma</a>
+                                    <td id="Newspapers-Name-1" class="Newspapers-Name">
+                                        <a href="#" style="display: block; padding:0px;">The Standard</a>
                                     </td>
-                                    <td id="Users-Contact-1" class="Users-Contact">
-                                        <a href="#" style="display: block; padding:0px;">0708344101</a>
+                                    <td id="Newspapers-Date_Of_Receipt-1" class="Newspapers-Date_Of_Receipt">
+                                        <a href="#" style="display: block; padding:0px;">02/24/2018</a>
                                     </td>
-                                    <td id="Users-ID_Number-1" class="Users-ID_Number text-right">
-                                        <a href="#" style="display: block; padding:0px;">99239183</a>
+                                    <td id="Newspapers-Date_Published-1" class="Newspapers-Date_Published">
+                                        <a href="#" style="display: block; padding:0px;">02/24/2018</a>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">
-                                        <input class="hidden-print record_selector" type="checkbox" id="record_selector_2" name="record_selector[]"
-                                            value="2">
+                                    <td id="Newspapers-Pages-1" class="Newspapers-Pages">
+                                        <a href="#" style="display: block; padding:0px;">35</a>
                                     </td>
-                                    <td id="Users-Membership_Number-2" class="Users-Membership_Number">
-                                        <a href="#" style="display: block; padding:0px;">2000</a>
+                                     <td id="Newspapers-Price-1" class="Newspapers-Price">
+                                        <a href="#" style="display: block; padding:0px;">100.00</a>
                                     </td>
-                                    <td id="Users-Name-2" class="Users-N0ame">
-                                        <a href="#" style="display: block; padding:0px;">Dennis Amadi</a>
+                                    <td id="Newspapers-Type-1" class="Newspapers-Type">
+                                        <a href="#" style="display: block; padding:0px;">newspaper</a>
                                     </td>
-                                    <td id="Users-Contact-2" class="Users-Contact">
-                                        <a href="#" style="display: block; padding:0px;">079822271</a>
+                                    <td id="Newspapers-Publisher-1" class="Newspapers-Publisher">
+                                        <a href="#" style="display: block; padding:0px;">Standard Group Media</a>
                                     </td>
-                                    <td id="Users-ID_Number-2" class="Users-ID_Number text-right">
-                                        <a href="#" style="display: block; padding:0px;">33432113</a>
-                                    </td>
+
+
                                 </tr>
                                 <!-- tv data above -->
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan="5">Records 1 to 2 of 2</td>
+                                    <td colspan="11">Records 1 to 1 of 1</td>
                                 </tr>
                             </tfoot>
                         </table>
