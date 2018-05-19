@@ -27,11 +27,10 @@ app.use(express.static(
     path.resolve(__dirname, 'public')
 ));
 
-
-
-app.get('/', (req, res) => {
-    res.redirect('/home');
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 app.use('/home', homeController);
 app.use('/newspaper', newspapersController);

@@ -1,5 +1,5 @@
 <div id="page-wrapper">
-
+    <form action="" method="POST" role="form">
     <div class="container-fluid">
 
         <!-- Page Heading -->
@@ -43,25 +43,25 @@
                         </div>
                     </div>
                     <hr class="hidden-xs hidden-md">
-
                     <div class="row">
                         <!-- form inputs -->
                         <div class="col-md-8 col-lg-9" id="Users_dv_form">
+                            {{#with user}}
+                            
                             <fieldset class="form-horizontal">
 
                                 <div class="form-group">
                                     <hr class="hidden-md hidden-lg">
-                                    <label for="id" class="control-label col-lg-3">ID</label>
+                                    <label for="Membership_Number" class="control-label col-lg-3">ID</label>
                                     <div class="col-lg-9">
-                                        <div class="form-control-static" id="id">1</div>
+                                        <input maxlength="40" type="text" class="form-control" name="id" value="{{id}}" readonly>
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <hr class="hidden-md hidden-lg">
                                     <label for="Membership_Number" class="control-label col-lg-3">Membership Number</label>
                                     <div class="col-lg-9">
-                                        <input maxlength="40" type="text" class="form-control" name="Membership_Number" id="Membership_Number" value="1231">
+                                        <input maxlength="40" type="text" class="form-control" name="Membership_Number" id="Membership_Number" value="{{Membership_Number}}">
                                     </div>
                                 </div>
 
@@ -69,7 +69,7 @@
                                     <hr class="hidden-md hidden-lg">
                                     <label for="Name" class="control-label col-lg-3">Name</label>
                                     <div class="col-lg-9">
-                                        <input maxlength="140" type="text" class="form-control" name="Name" id="Name" value="Kelvin Guma">
+                                        <input maxlength="140" type="text" class="form-control" name="Name" id="Name" value="{{Name}}">
                                     </div>
                                 </div>
 
@@ -77,7 +77,7 @@
                                     <hr class="hidden-md hidden-lg">
                                     <label for="Contact" class="control-label col-lg-3">Contact</label>
                                     <div class="col-lg-9">
-                                        <input maxlength="40" type="text" class="form-control" name="Contact" id="Contact" value="0708344101">
+                                        <input maxlength="40" type="text" class="form-control" name="Contact" id="Contact" value="{{Contact}}">
                                     </div>
                                 </div>
 
@@ -92,11 +92,12 @@
                                             <div class="alert alert-info">for only those above eighteen</div>
                                         </span>
 
-                                        <input maxlength="" type="text" class="form-control" name="ID_Number" id="ID_Number" value="99239183">
+                                        <input maxlength="" type="text" class="form-control" name="ID_Number" id="ID_Number" value="{{ID_Number}}">
                                     </div>
                                 </div>
 
                             </fieldset>
+                            {{/with}}
                         </div>
 
                         <!-- DV action buttons -->
@@ -104,7 +105,7 @@
                         <div class="col-md-4 col-lg-3" id="Users_dv_action_buttons">
                             <div class="btn-toolbar" style="margin-top: 0px;">
                                 <div class="btn-group-vertical btn-group-lg" style="width: 100%;">
-                                    <button type="submit" class="btn btn-success btn-lg" id="update" name="update_x" value="1"
+                                    <button type="submit" class="btn btn-success btn-lg" value="1"
                                         title="Save Changes">
                                         <i class="glyphicon glyphicon-ok"></i> Save Changes</button>
                                 </div>
@@ -176,6 +177,7 @@
                                                                     Status </th>
                                                             </tr>
                                                         </thead>
+                                                        {{#with user}}
                                                         <tbody>
                                                             <tr>
                                                                 <td class="text-center view-on-click">
@@ -184,16 +186,15 @@
                                                                         <i class="glyphicon glyphicon-new-window hspacer-md"></i>
                                                                     </a>
                                                                 </td>
-                                                                <td class="Book_Issue-issue_id" id="Book_Issue-issue_id-1">1</td>
-                                                                <td class="Book_Issue-Member" id="Book_Issue-Member-1">Kelvin Guma</td>
-                                                                <td class="Book_Issue-Number" id="Book_Issue-Number-1">1231</td>
-                                                                <td class="Book_Issue-Book_Number" id="Book_Issue-Book_Number-1">62781733</td>
-                                                                <td class="Book_Issue-Book_Title" id="Book_Issue-Book_Title-1">River Between</td>
-                                                                <td class="Book_Issue-Issue_Date" id="Book_Issue-Issue_Date-1">02/24/2018</td>
-                                                                <td class="Book_Issue-Return_Date" id="Book_Issue-Return_Date-1">02/24/2018</td>
-                                                                <td class="Book_Issue-Status" id="Book_Issue-Status-1">returned</td>
+                                                                <td class="Users-Id" >{{id}}</td>
+                                                                <td class="Users-Membership_Number" >{{Membership_Number}}</td>
+                                                                <td class="Users-Name" >{{Name}}</td>
+                                                                <td class="Users-Contact" >{{Contact}}</td>
+                                                                <td class="Users-ID_Number" >{{ID_Number}}</td>
+
                                                             </tr>
                                                         </tbody>
+                                                        {{/with}}
                                                         <tfoot>
                                                             <tr>
                                                                 <td colspan="9">
@@ -304,6 +305,7 @@
         </div>
         <!-- /table detail-->
     </div>
+    </form>
     <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->
