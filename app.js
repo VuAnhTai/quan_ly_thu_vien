@@ -7,8 +7,14 @@ var path = require('path');
 var usersController = require('./controllers/usersController');
 var homeController = require('./controllers/homeController');
 var newspapersController = require('./controllers/newspapersController');
+
+var magazinesController = require('./controllers/magazinesController');
+
+
+
 var booksController = require('./controllers/booksController');
 var issuedController = require('./controllers/issuedController');
+
     
 
 
@@ -32,9 +38,17 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
+
+app.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
 app.use('/home', homeController);
 app.use('/newspaper', newspapersController);
 app.use('/user', usersController);
+// app.use('/books', booksControllers);
+ app.use('/magazine', magazinesController);
+
  app.use('/book', booksController);
 // app.use('/magazines', magazinesControllers);
 // app.use('/returns', returnsControllers);

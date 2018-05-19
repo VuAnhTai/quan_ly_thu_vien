@@ -14,7 +14,7 @@
                     <div class="col-sm-8">
                         <a style="text-decoration: none; color: inherit;" href="#">
                             <h1 style="margin-top: 0px">
-                                <i class="fa fa-newspaper-o"></i> NewsPapers
+                                <i class="fa fa-newspaper-o"></i> Magazines
                             </h1>
                         </a>
                     </div>
@@ -38,8 +38,8 @@
         <!-- bottons -->
         <div id="top_buttons" class="hidden-print">
             <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
-                <a href="newspaper/add" id="addNew" name="addNew_x" value="1" class="btn btn-success">
-                    <i class="glyphicon glyphicon-plus-sign"></i> Add New</a>
+                <button type="submit" id="addNew" name="addNew_x" value="1" class="btn btn-success">
+                    <i class="glyphicon glyphicon-plus-sign"></i> Add New</button>
                 <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
                     <i class="glyphicon glyphicon-print"></i> Print Preview</button>
                 <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
@@ -124,49 +124,44 @@
                             <div class="col-md-6">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" data-col="Newspapers-Language" checked=""> Language</label>
+                                        <input type="checkbox" data-col="Magazines-Type" checked=""> Type</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" data-col="Newspapers-Name" checked=""> Name</label>
+                                        <input type="checkbox" data-col="Magazines-Name" checked=""> Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" data-col="Newspapers-Date_Of_Receipt" checked=""> Date Of Receipt</label>
+                                        <input type="checkbox" data-col="Magazines-Date_Of_Receipt" checked=""> Date Of Receipt</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" data-col="Newspapers-Date_Published" checked=""> Date Published</label>
+                                        <input type="checkbox" data-col="Magazines-Date_Published" checked=""> Date Published</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" data-col="Newspapers-Pages" checked=""> Pages</label>
+                                        <input type="checkbox" data-col="Magazines-Pages" checked=""> Pages</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" data-col="Newspapers-Price" checked=""> Price</label>
+                                        <input type="checkbox" data-col="Magazines-Price" checked=""> Price</label>
                                 </div>
                             </div>
+                          
                             <div class="col-md-6">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" data-col="Newspapers-Type" checked=""> Type</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-col="Newspapers-Publisher" checked=""> Publisher</label>
+                                        <input type="checkbox" data-col="Magazines-Publisher" checked=""> Publisher</label>
                                 </div>
                             </div>
                             <button type="button" class="btn btn-default btn-block" id="toggle-columns-collapser"
@@ -190,28 +185,26 @@
                             <th style="width: 18px;" class="text-center">
                                 <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
                             </th>
-                            <th class="Newspapers-Language">
-                                <a href="#" class="TableHeader">Language</a>
-                            </th>
-                            <th class="Newspapers-Name">
-                                <a href="#" class="TableHeader">Name</a>
-                            </th>
-                            <th class="Newspapers-Date_Of_Receipt">
-                                <a href="#" class="TableHeader">Date Of Receipt</a>
-                            </th>
-                            <th class="Newspapers-Date_Published">
-                                <a href="#" class="TableHeader">Date Published</a>
-                            </th>
-                            <th class="Newspapers-Pages">
-                                <a href="#" class="TableHeader">Pages</a>
-                            </th>
-                            <th class="Newspapers-Price">
-                                <a href="#" class="TableHeader">Price</a>
-                            </th>
-                            <th class="Newspapers-Type">
+                            <th class="Magazines-Type">
                                 <a href="#" class="TableHeader">Type</a>
                             </th>
-                            <th class="Newspapers-Publisher">
+                            <th class="Magazines-Name">
+                                <a href="#" class="TableHeader">Name</a>
+                            </th>
+                            <th class="Magazines-Date_Of_Receipt">
+                                <a href="#" class="TableHeader">Date Of Receipt</a>
+                            </th>
+                            <th class="Magazines-Date_Published">
+                                <a href="#" class="TableHeader">Date Published</a>
+                            </th>
+                            <th class="Magazines-Pages">
+                                <a href="#" class="TableHeader">Pages</a>
+                            </th>
+                            <th class="Magazines-Price">
+                                <a href="#" class="TableHeader">Price</a>
+                            </th>
+                           
+                            <th class="Magazines-Publisher">
                                 <a href="#" class="TableHeader">Publisher</a>
                             </th>
                     
@@ -221,36 +214,34 @@
 
                     <tbody>
                         <!-- tv data below -->
-                        {{#each newspapers}}
-                                                    <tr>
+                        {{#each magazines}}
+                            <tr>
                             <td class="text-center">
                                 <input class="hidden-print record_selector" type="checkbox" id="record_selector_1" name="record_selector[]"
                                     value="1">
                             </td>
 
 
-                            <td id="Newspapers-Language-1" class="Newspapers-Language">
-                                <a href="#" style="display: block; padding:0px;">{{Language}}</a>
-                            </td>
-                            <td id="Newspapers-Name-1" class="Newspapers-Name">
-                                <a href="#" style="display: block; padding:0px;">{{Name}}</a>
-                            </td>
-                            <td id="Newspapers-Date_Of_Receipt-1" class="Newspapers-Date_Of_Receipt">
-                                <a href="#" style="display: block; padding:0px;">{{Date_Of_Receipt}}</a>
-                            </td>
-                            <td id="Newspapers-Date_Published-1" class="Newspapers-Date_Published">
-                                <a href="#" style="display: block; padding:0px;">{{Date_Published}}</a>
-                            </td>
-                            <td id="Newspapers-Pages-1" class="Newspapers-Pages">
-                                <a href="#" style="display: block; padding:0px;">{{Pages}}</a>
-                            </td>
-                                <td id="Newspapers-Price-1" class="Newspapers-Price">
-                                <a href="#" style="display: block; padding:0px;">{{Price}}</a>
-                            </td>
-                            <td id="Newspapers-Type-1" class="Newspapers-Type">
+                            <td id="Magazines-Type-1" class="Magazines-Type">
                                 <a href="#" style="display: block; padding:0px;">{{Type}}</a>
                             </td>
-                            <td id="Newspapers-Publisher-1" class="Newspapers-Publisher">
+                            <td id="Magazines-Name-1" class="Magazines-Name">
+                                <a href="#" style="display: block; padding:0px;">{{Name}}</a>
+                            </td>
+                            <td id="Magazines-Date_Of_Receipt-1" class="Magazines-Date_Of_Receipt">
+                                <a href="#" style="display: block; padding:0px;">{{Date_Of_Receipt}}</a>
+                            </td>
+                            <td id="Magazines-Date_Published-1" class="Magazines-Date_Published">
+                                <a href="#" style="display: block; padding:0px;">{{Date_Published}}</a>
+                            </td>
+                            <td id="Magazines-Pages-1" class="Magazines-Pages">
+                                <a href="#" style="display: block; padding:0px;">{{Pages}}</a>
+                            </td>
+                                <td id="Magazines-Price-1" class="Magazines-Price">
+                                <a href="#" style="display: block; padding:0px;">{{Price}}</a>
+                            </td>
+                          
+                            <td id="Magazines-Publisher-1" class="Magazines-Publisher">
                                 <a href="#" style="display: block; padding:0px;">{{Publisher}}</a>
                             </td>
 
@@ -291,3 +282,7 @@
     <!-- /.container-fluid -->
 
 </div>
+<a class="btn btn-large btn-block btn-primary" href="magazines/magazines_add" role="button">
+    <span class="glyphicon glyphicon-plus"></span>
+    Thêm danh mục mới
+</a>
