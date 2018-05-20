@@ -20,10 +20,11 @@ exports.loadAll = () => {
 //     });
 // }
 
-// exports.add = (c) => {
-//     var sql = `insert into categories(catname) values('${c.CatName}')`;
-//     return db.save(sql);
-// }
+exports.add = (n) => {
+    var sql = `insert into newspapers(Language, Name, Date_Of_Receipt, Date_Published, Pages, Price, Type, Publisher) 
+    values('${n.Language}', '${n.Name}', '${n.Date_Of_Receipt}', '${n.Date_Published}', '${n.Pages}', '${n.Price}', '${n.Type}', '${n.Publisher}')`;
+    return db.save(sql);
+}
 
 // exports.delete = (id) => {
 //     var sql = `delete from categories where CatId = ${id}`;

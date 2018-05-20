@@ -7,6 +7,15 @@ exports.loadAll = () => {
     return db.load(sql);
 }
 
+
+
+exports.add = n => {
+    var sql = `insert into books(ISBN_NO, Book_Title, Book_Type, Author_Name, Quantity, Purchase_Date, Edition, Price,Pages, Publisher) 
+    values('${n.ISBN_NO}', '${n.Book_Title}', '${n.Book_Type}', '${n.Author_Name}', '${n.Quantity}', '${n.Purchase_Date}', '${n.Edition}','${n.Price}' ,'${n.Pages}','${n.Publisher}')`;
+    return db.save(sql);
+}
+
+
 // exports.single = (id) => {
 //     return new Promise((resolve, reject) => {
 //         var sql = `select * from categories where CatId = ${id}`;
