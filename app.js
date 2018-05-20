@@ -4,9 +4,12 @@ var exphbs_section = require('express-handlebars-sections');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-var usersControllers = require('./controllers/usersController');
+var usersController = require('./controllers/usersController');
 var homeController = require('./controllers/homeController');
 var newspapersController = require('./controllers/newspapersController');
+var magazinesController = require('./controllers/magazinesController');
+
+
     
 
 
@@ -32,10 +35,10 @@ app.get('/', (req, res) => {
 });
 
 app.use('/home', homeController);
-app.use('/newspapers', newspapersController);
-app.use('/users', usersControllers);
+app.use('/newspaper', newspapersController);
+app.use('/user', usersController);
 // app.use('/books', booksControllers);
-// app.use('/magazines', magazinesControllers);
+ app.use('/magazine', magazinesController);
 // app.use('/returns', returnsControllers);
 // app.use('/issues', issuesControllers);
 
