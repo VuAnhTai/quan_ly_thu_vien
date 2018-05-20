@@ -1,4 +1,5 @@
 var db = require('../fn/db');
+var config = require('../config/config');
 
 exports.loadAll = () => {
 	var sql = 'select * from users';
@@ -30,4 +31,14 @@ exports.update = user => {
 	where id = '${user.id}'`;
 	console.log(sql);
 	return db.save(sql);
+}
+
+exports.loadAllOffset = (offset) => {
+	var sql = `select * from users limit ${config.USER_PER_PAGE} offset ${offset}`;
+	return db.load(sql);
+}
+
+exports.countUsers = () => {
+	var sql = `select count(*) as total from users`;
+	return db.load(sql);
 }

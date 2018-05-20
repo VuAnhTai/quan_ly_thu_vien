@@ -1,290 +1,307 @@
 <div id="page-wrapper">
 
-            <div class="container-fluid">
+    <div class="container-fluid">
 
-                <!-- Page Heading -->
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Dashboard
+                    <small>Thống kê tổng quát</small>
+                </h1>
+
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Dashboard
-                            <small>Thống kê tổng quát</small>
-                        </h1>
-
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <a style="text-decoration: none; color: inherit;" href="Users_view.php">
-                                    <h1 style="margin-top: 0px">
-                                        <i class="fa fa-user"></i> Users
-                                    </h1>
-                                </a>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="input-group" id="quick-search">
-                                    <input type="text" id="SearchString" name="SearchString" value="" class="form-control" placeholder="Quick Search">
-                                    <span class="input-group-btn">
-                                        <button name="Search_x" value="1" id="Search" type="submit" class="btn btn-default" title="Quick Search">
-                                            <i class="glyphicon glyphicon-search"></i>
-                                        </button>
-                                        <button name="ClearQuickSearch" value="1" id="ClearQuickSearch" type="submit" class="btn btn-default" title="Show All">
-                                            <i class="glyphicon glyphicon-remove-circle"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
+                    <div class="col-sm-8">
+                        <a style="text-decoration: none; color: inherit;" href="Users_view.php">
+                            <h1 style="margin-top: 0px">
+                                <i class="fa fa-user"></i> Users
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="input-group" id="quick-search">
+                            <input type="text" id="SearchString" name="SearchString" value="" class="form-control" placeholder="Quick Search">
+                            <span class="input-group-btn">
+                                <button name="Search_x" value="1" id="Search" type="submit" class="btn btn-default" title="Quick Search">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                                <button name="ClearQuickSearch" value="1" id="ClearQuickSearch" type="submit" class="btn btn-default" title="Show All">
+                                    <i class="glyphicon glyphicon-remove-circle"></i>
+                                </button>
+                            </span>
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
-                <!-- bottons -->
-                <div id="top_buttons" class="hidden-print">
-                    <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
-                        <button type="submit" id="addNew" name="addNew_x" value="1" class="btn btn-success">
-                            <a href=""></a>
-                            <i class="glyphicon glyphicon-plus-sign"></i> Add New</button>
-                        <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-print"></i> Print Preview</button>
-                        <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default" onclick="exportToExcel('user_table')" value="export">
-                            <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
-                        <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-filter"></i> Filter</button>
-                        <button type="submit" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-remove-circle"></i> Show All</button>
-                    </div>
-                    <div class="btn-group btn-group-lg visible-md visible-lg selected_records hidden pull-left hspacer-lg">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
-                            <i class="glyphicon glyphicon-check"></i> More
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="#" id="selected_records_print_multiple_dv_sdv">
-                                    <span class="">
-                                        <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="selected_records_mass_delete">
-                                    <span class="text-danger">
-                                        <i class="glyphicon glyphicon-trash"></i> Delete</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="btn-group-vertical btn-group-lg visible-xs visible-sm all_records">
-                        <button type="submit" id="addNew" name="addNew_x" value="1" class="btn btn-success">
-                            <i class="glyphicon glyphicon-plus-sign"></i> Add New</button>
-                        <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-print"></i> Print Preview</button>
-                        <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
-                        <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-filter"></i> Filter</button>
-                        <button type="submit" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-remove-circle"></i> Show All</button>
-                    </div>
-                    <div class="btn-group-vertical btn-group-lg visible-xs visible-sm selected_records hidden vspacer-lg">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
-                            <i class="glyphicon glyphicon-check"></i> More
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="#" id="selected_records_print_multiple_dv_sdv">
-                                    <span class="">
-                                        <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="selected_records_mass_delete">
-                                    <span class="text-danger">
-                                        <i class="glyphicon glyphicon-trash"></i> Delete</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pull-right flip btn-group vspacer-md" id="tv-tools">
-                        <button title="Previous column" type="button" class="btn btn-default tv-scroll" style="display: none;">
-                            <i class="glyphicon glyphicon-step-backward"></i>
-                        </button>
-                        <button title="Next column" type="button" class="btn btn-default tv-scroll" style="display: none;">
-                            <i class="glyphicon glyphicon-step-forward"></i>
-                        </button>
-                        <button title="Hide/Show columns" type="button" class="btn btn-default tv-toggle" data-toggle="collapse" data-target="#toggle-columns-container">
-                            <i class="glyphicon glyphicon-align-justify rotate90"></i>
-                        </button>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="collapse" id="toggle-columns-container">
-                        <div class="well pull-right flip" style="width: 100%; max-width: 600px;">
-                            <div class="row" id="toggle-columns">
-                                <div class="col-md-12">
-                                    <button type="button" class="btn btn-default btn-block" id="show-all-columns">
-                                        <i class="glyphicon glyphicon-check"></i> Show All</button>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Users-Membership_Number" checked=""> Membership Number</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Users-Name" checked=""> Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Users-Contact" checked=""> Contact</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Users-ID_Number" checked=""> ID Number</label>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn btn-default btn-block" id="toggle-columns-collapser"
-                                        data-toggle="collapse" data-target="#toggle-columns-container">
-                                        <i class="glyphicon glyphicon-ok"></i> Ok</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <p></p>
-                </div>
-                <!-- /bottons -->
-                <!-- table -->
-                <div class="table_view col-xs-12">
-                    <div class="table-responsive">
-                        <table id="user_table" class="table table-striped table-bordered table-hover" >
-                            <thead>
-                                <tr>
-                                    <th style="width: 18px;" class="text-center">
-                                        <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
-                                    </th>
-                                    <th class="Users-Membership_Number">
-                                            <a href="#" class="TableHeader">ID</a>
-                                    </th>
-                                    <th class="Users-Membership_Number">
-                                            <a href="#" class="TableHeader">Membership Number</a>
-                                    </th>
-                                    <th class="Users-Name">
-                                        <a href="#" class="TableHeader">Name</a>
-                                    </th>
-                                    <th class="Users-Contact">
-                                        <a href="#" class="TableHeader">Contact</a>
-                                    </th>
-                                    <th class="Users-ID_Number">
-                                        <a href="#" class="TableHeader">ID Number</a>
-                                    </th>
-
-                                </tr>
-
-                            </thead>
-                            {{#each users}}
-                            <tbody>
-                                <!-- tv data below -->
-                                <tr>
-                                    <td class="text-center">
-                                        <input class="hidden-print record_selector" type="checkbox" id="record_selector_1" name="record_selector[]"
-                                            value="1">
-                                    </td>
-
-                                    <td id="Users-Membership_Number-1" class="Users-Id">
-                                        <a href="user/edit?id={{id}}" style="display: block; padding:0px;">{{id}}</a>
-                                    </td>
-                                    <td id="Users-Membership_Number-1" class="Users-Membership_Number">
-                                        <a href="user/edit?id={{id}}" style="display: block; padding:0px;">{{Membership_Number}}</a>
-                                    </td>
-                                    <td id="Users-Name-1" class="Users-Name">
-                                        <a href="user/edit?id={{id}}" style="display: block; padding:0px;">{{Name}}</a>
-                                    </td>
-                                    <td id="Users-Contact-1" class="Users-Contact">
-                                        <a href="user/edit?id={{id}}" style="display: block; padding:0px;">{{Contact}}</a>
-                                    </td>
-                                    <td id="Users-ID_Number-1" class="Users-ID_Number text-right">
-                                        <a href="user/edit?id={{id}}" style="display: block; padding:0px;">{{ID_Number}}</a>
-                                    </td>
-                                </tr>
-                                <!-- tv data above -->
-                                {{/each}}
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="5">Records 1 to 2 of 2</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div class="row pagination-section">
-                        <div class="col-xs-4 col-md-3 col-lg-2 vspacer-lg">
-                            <button type="submit" name="Previous_x"
-                                id="Previous" value="1" class="btn btn-default btn-block">
-                                <i class="glyphicon glyphicon-chevron-left"></i>
-                                <span class="hidden-xs">Previous</span>
-                            </button>
-                        </div>
-                        <div class="col-xs-4 col-md-4 col-lg-2 col-md-offset-1 col-lg-offset-3 text-center vspacer-lg"></div>
-                        <div class="col-xs-4 col-md-3 col-lg-2 col-md-offset-1 col-lg-offset-3 text-right vspacer-lg">
-                            <button  type="submit" name="Next_x"
-                                id="Next" value="1" class="btn btn-default btn-block">
-                                <span class="hidden-xs">Next</span>
-                                <i class="glyphicon glyphicon-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- /table -->
             </div>
-            <!-- /.container-fluid -->
-
         </div>
-       <script>
-function exportToExcel(tableID){
-    var tab_text="<table border='2px'><tr bgcolor='#87AFC6' style='height: 75px; text-align: center; width: 250px'>";
-    var textRange; var j=0;
-    tab = document.getElementById(tableID); // id of table
+        <!-- /.row -->
+        <!-- bottons -->
+        <div id="top_buttons" class="hidden-print">
+            <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
+                <a href="user/add" id="addNew" name="addNew_x" value="1" class="btn btn-success">
+                    <i class="glyphicon glyphicon-plus-sign"></i> Add New</a>
+                <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-print"></i> Print Preview</button>
+                <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default" onclick="exportToExcel('user_table')" value="export">
+                    <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
+                <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-filter"></i> Filter</button>
+                <a href="user/viewall" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-remove-circle"></i> Show All</a>
+            </div>
+            <div class="btn-group btn-group-lg visible-md visible-lg selected_records hidden pull-left hspacer-lg">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
+                    <i class="glyphicon glyphicon-check"></i> More
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="#" id="selected_records_print_multiple_dv_sdv">
+                            <span class="">
+                                <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="selected_records_mass_delete" onclick="document.getElementById(ZGjWKsT3KXVug4BImXCY).style.display='block';">
+                            <span class="text-danger">
+                                <i class="glyphicon glyphicon-trash"></i> Delete</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-group-vertical btn-group-lg visible-xs visible-sm all_records">
+                <button type="submit" id="addNew" name="addNew_x" value="1" class="btn btn-success">
+                    <i class="glyphicon glyphicon-plus-sign"></i> Add New</button>
+                <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-print"></i> Print Preview</button>
+                <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
+                <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-filter"></i> Filter</button>
+                <button type="submit" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-remove-circle"></i> Show All</button>
+            </div>
+            <div class="btn-group-vertical btn-group-lg visible-xs visible-sm selected_records hidden vspacer-lg">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
+                    <i class="glyphicon glyphicon-check"></i> More
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="#" id="selected_records_print_multiple_dv_sdv">
+                            <span class="">
+                                <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="selected_records_mass_delete">
+                            <span class="text-danger">
+                                <i class="glyphicon glyphicon-trash"></i> Delete</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="pull-right flip btn-group vspacer-md" id="tv-tools">
+                <button title="Previous column" type="button" class="btn btn-default tv-scroll" style="display: none;">
+                    <i class="glyphicon glyphicon-step-backward"></i>
+                </button>
+                <button title="Next column" type="button" class="btn btn-default tv-scroll" style="display: none;">
+                    <i class="glyphicon glyphicon-step-forward"></i>
+                </button>
+                <button title="Hide/Show columns" type="button" class="btn btn-default tv-toggle" data-toggle="collapse" data-target="#toggle-columns-container">
+                    <i class="glyphicon glyphicon-align-justify rotate90"></i>
+                </button>
+            </div>
+            <div class="clearfix"></div>
+            <div class="collapse" id="toggle-columns-container">
+                <div class="well pull-right flip" style="width: 100%; max-width: 600px;">
+                    <div class="row" id="toggle-columns">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-default btn-block" id="show-all-columns">
+                                <i class="glyphicon glyphicon-check"></i> Show All</button>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-col="Users-Membership_Number" checked=""> Membership Number</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-col="Users-Name" checked=""> Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-col="Users-Contact" checked=""> Contact</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-col="Users-ID_Number" checked=""> ID Number</label>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-default btn-block" id="toggle-columns-collapser" data-toggle="collapse" data-target="#toggle-columns-container">
+                                <i class="glyphicon glyphicon-ok"></i> Ok</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
 
-    for(j = 0 ; j < tab.rows.length ; j++)
-    {
+            <p></p>
+        </div>
+        <!-- /bottons -->
+        <!-- table -->
+        <div class="table_view col-xs-12">
+            <div class="table-responsive">
+                <table id="user_table" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th style="width: 18px;" class="text-center">
+                                <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
+                            </th>
+                            <th class="Users-Membership_Number">
+                                <a href="#" class="TableHeader">ID</a>
+                            </th>
+                            <th class="Users-Membership_Number">
+                                <a href="#" class="TableHeader">Membership Number</a>
+                            </th>
+                            <th class="Users-Name">
+                                <a href="#" class="TableHeader">Name</a>
+                            </th>
+                            <th class="Users-Contact">
+                                <a href="#" class="TableHeader">Contact</a>
+                            </th>
+                            <th class="Users-ID_Number">
+                                <a href="#" class="TableHeader">ID Number</a>
+                            </th>
 
-        tab_text=tab_text;
+                        </tr>
 
-        tab_text=tab_text+tab.rows[j].innerHTML.toUpperCase()+"</tr>";
-        //tab_text=tab_text+"</tr>";
+                    </thead>
+                    {{#each users}}
+                    <tbody>
+                        <!-- tv data below -->
+                        <tr>
+                            <td class="text-center">
+                                <input class="hidden-print record_selector" type="checkbox" id="record_selector_1" name="record_selector[]" value="1">
+                            </td>
+
+                            <td id="Users-Membership_Number-1" class="Users-Id">
+                                <a href="user/edit?id={{id}}" style="display: block; padding:0px;">{{id}}</a>
+                            </td>
+                            <td id="Users-Membership_Number-1" class="Users-Membership_Number">
+                                <a href="user/edit?id={{id}}" style="display: block; padding:0px;">{{Membership_Number}}</a>
+                            </td>
+                            <td id="Users-Name-1" class="Users-Name">
+                                <a href="user/edit?id={{id}}" style="display: block; padding:0px;">{{Name}}</a>
+                            </td>
+                            <td id="Users-Contact-1" class="Users-Contact">
+                                <a href="user/edit?id={{id}}" style="display: block; padding:0px;">{{Contact}}</a>
+                            </td>
+                            <td id="Users-ID_Number-1" class="Users-ID_Number text-right">
+                                <a href="user/edit?id={{id}}" style="display: block; padding:0px;">{{ID_Number}}</a>
+                            </td>
+                        </tr>
+                        <!-- tv data above -->
+                        {{/each}}
+                    </tbody>
+                </table>
+                <ul class="pagination">
+                    <li class="disabled">
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                    </li>
+                    {{#each pageNumber}} {{#if isCurPage}}
+                    <li class="active">
+                        <a href="javascript:;">{{value}}</a>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href="?page={{value}}">{{value}}</a>
+                    </li>
+                    {{/if}} {{/each}}
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">»</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /table -->
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<div class="modal fade in" tabindex="-1" role="dialog" id="ZGjWKsT3KXVug4BImXCY" aria-hidden="false" style="display: none; padding-right: 15px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="document.getElementById(ZGjWKsT3KXVug4BImXCY).style.display='block';">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" style="width: 90%;">Confirm deleting multiple records</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger">
+                    <i class="glyphicon glyphicon-warning-sign"></i> 2 records will be deleted. Are you sure you want to do this?</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="ZGjWKsT3KXVug4BImXCY_footer_button_nZ33o9bbuV">
+                    <i class="glyphicon glyphicon-trash"></i> Yes, delete them!</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" id="ZGjWKsT3KXVug4BImXCY_footer_button_NCZeBKdwl8">
+                    <i class="glyphicon glyphicon-ok"></i> No, keep them.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function exportToExcel(tableID) {
+        var tab_text = "<table border='2px'><tr bgcolor='#87AFC6' style='height: 75px; text-align: center; width: 250px'>";
+        var textRange; var j = 0;
+        tab = document.getElementById(tableID); // id of table
+
+        for (j = 0; j < tab.rows.length; j++) {
+
+            tab_text = tab_text;
+
+            tab_text = tab_text + tab.rows[j].innerHTML.toUpperCase() + "</tr>";
+            //tab_text=tab_text+"</tr>";
+        }
+
+        tab_text = tab_text + "</table>";
+        tab_text = tab_text.replace(/<A[^>]*>|<\/A>/g, ""); //remove if u want links in your table
+        tab_text = tab_text.replace(/<img[^>]*>/gi, ""); //remove if u want images in your table
+        tab_text = tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); //remove input params
+
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+
+        {
+            txtArea1.document.open("txt/html", "replace");
+            txtArea1.document.write('sep=,\r\n' + tab_text);
+            txtArea1.document.close();
+            txtArea1.focus();
+            sa = txtArea1.document.execCommand("SaveAs", true, "sudhir123.txt");
+        }
+
+        else {
+            sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+        }
+
+        return (sa);
     }
 
-    tab_text= tab_text+"</table>";
-    tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, ""); //remove if u want links in your table
-    tab_text= tab_text.replace(/<img[^>]*>/gi,""); //remove if u want images in your table
-    tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); //remove input params
-
-    var ua = window.navigator.userAgent;
-    var msie = ua.indexOf("MSIE ");
-
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
-
-    {
-        txtArea1.document.open("txt/html","replace");
-        txtArea1.document.write( 'sep=,\r\n' + tab_text);
-        txtArea1.document.close();
-        txtArea1.focus();
-        sa=txtArea1.document.execCommand("SaveAs",true,"sudhir123.txt");
+    function printData() {
+        window.print();
     }
-
-    else {
-       sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
-    }
-    
-    return (sa);
-}
-
-function printData() {
-    window.print();
-}
 </script>
