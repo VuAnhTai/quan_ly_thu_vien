@@ -47,7 +47,7 @@ app.use('/home', homeController);
 app.use('/newspaper', newspapersController);
 app.use('/user', usersController);
 // app.use('/books', booksControllers);
- app.use('/magazine', magazinesController);
+ app.use('/magazines', magazinesController);
 
  app.use('/book', booksController);
 // app.use('/magazines', magazinesControllers);

@@ -14,27 +14,38 @@ router.get('/', (req, res) => {
         var vm = {
             magazines: rows
         };
-        console.log(vm);
         res.render('magazines/magazines_view', vm);
     });
 });
 
 router.get('/add', (req, res) => {
-    var vm = {
-        showAlert: false
-    };
-    res.render('magazines/magazines_add', vm);
+    res.render('magazines/magazines_add');
 });
 
 router.post('/add', (req, res) => {
     magazinesRepo.add(req.body).then(value => {
-        var vm = {
-            showAlert: true
-        };
+        // var vm = {
+        //     showAlert: true
+        // };
         res.render('magazines/magazines_add', vm);
     }).catch(err => {
         res.end('fail');
     });
 });
 
+
+router.get('/detail', (req, res) => {
+    res.render('magazines/magazines_detail');
+});
+
+router.post('/detail', (req, res) => {
+    magazinesRepo.add(req.body).then(value => {
+        // var vm = {
+        //     showAlert: true
+        // };
+        res.render('magazines/magazines_detail', vm);
+    }).catch(err => {
+        res.end('fail');
+    });
+});
 module.exports = router;

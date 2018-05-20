@@ -7,25 +7,26 @@ exports.loadAll = () => {
     return db.load(sql);
 }
 
-exports.single = (id) => {
-    return new Promise((resolve, reject) => {
-        var sql = `select * from magazines where ID = ${id}`;
-        db.load(sql).then(rows => {
-            if (rows.length === 0) {
-                resolve(null);
-            } else {
-                resolve(rows[0]);
-            }
-        }).catch(err => {
-            reject(err);
-        });
-    });
-}
-
-// exports.add = (c) => {
-//     var sql = `insert into categories(catname) values('${c.CatName}')`;
-//     return db.save(sql);
+// exports.single = (id) => {
+//     return new Promise((resolve, reject) => {
+//         var sql = `select * from magazines where ID = ${id}`;
+//         db.load(sql).then(rows => {
+//             if (rows.length === 0) {
+//                 resolve(null);
+//             } else {
+//                 resolve(rows[0]);
+//             }
+//         }).catch(err => {
+//             reject(err);
+//         });
+//     });
 // }
+
+exports.add = (n) => {
+    var sql = `insert into newspapers(Type, Name, Date_Of_Receipt, Date_Published, Pages, Price, Publisher) 
+    values('${n.Type}', '${n.Name}', '${n.Date_Of_Receipt}', '${n.Date_Published}', '${n.Pages}', '${n.Price}', '${n.Publisher}')`;
+    return db.save(sql);
+}
 
 // exports.delete = (id) => {
 //     var sql = `delete from categories where CatId = ${id}`;
