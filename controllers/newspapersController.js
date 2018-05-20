@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         var vm = {
             newspapers: rows
         };
-        res.render('newspapers/newspapers_view', vm);
+        res.render('newspaper/newspapers_view', vm);
     });
 });
 
