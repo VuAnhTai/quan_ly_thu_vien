@@ -6,7 +6,7 @@ exports.load = sql => {
             host: 'localhost',
             port: 3306,
             user: 'root',
-            password: '',
+            password: 'root',
             database: 'saide_db'
         });
 
@@ -30,8 +30,8 @@ exports.save = sql => {
             host: 'localhost',
             port: 3306,
             user: 'root',
-            password: '',
-            database: 'tour'
+            password: 'root',
+            database: 'saide_db'
         });
 
         cn.connect();
