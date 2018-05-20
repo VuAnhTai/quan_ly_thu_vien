@@ -23,7 +23,7 @@ exports.loadAll = () => {
 // }
 
 exports.add = (n) => {
-    var sql = `insert into newspapers(Type, Name, Date_Of_Receipt, Date_Published, Pages, Price, Publisher) 
+    var sql = `insert into magazines(Type, Name, Date_Of_Receipt, Date_Published, Pages, Price, Publisher) 
     values('${n.Type}', '${n.Name}', '${n.Date_Of_Receipt}', '${n.Date_Published}', '${n.Pages}', '${n.Price}', '${n.Publisher}')`;
     return db.save(sql);
 }

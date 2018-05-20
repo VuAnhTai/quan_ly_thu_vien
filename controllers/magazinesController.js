@@ -23,11 +23,12 @@ router.get('/add', (req, res) => {
 });
 
 router.post('/add', (req, res) => {
+    console.log(req.body);
     magazinesRepo.add(req.body).then(value => {
         // var vm = {
         //     showAlert: true
         // };
-        res.render('magazines/magazines_add', vm);
+        res.render('magazines/magazines_add');
     }).catch(err => {
         res.end('fail');
     });
