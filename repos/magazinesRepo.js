@@ -33,7 +33,15 @@ exports.add = (n) => {
 //     return db.save(sql);
 // }
 
-// exports.update = (c) => {
-//     var sql = `update categories set CatName = '${c.CatName}' where CatID = ${c.CatId}`;
-//     return db.save(sql);
-// }
+exports.update = (n) => {
+    var sql = `update magazines set Type = '${n.Type}',
+    								Name = '${n.Name}',
+    								Date_Of_Receipt ='${n.Date_Of_Receipt}' ,
+    								Date_Published = '${n.Date_Published}',
+    								Pages = '${n.Pages}', 
+    								Price = '${n.Price}',
+    								Publisher = '${n.Publisher}'
+    								 where id = ${n.id}`;
+    								 console.log(sql);
+    return db.save(sql);
+}

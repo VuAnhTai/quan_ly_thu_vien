@@ -14,6 +14,7 @@ var magazinesController = require('./controllers/magazinesController');
 
 var booksController = require('./controllers/booksController');
 var issuedController = require('./controllers/issuedController');
+var returnedController = require('./controllers/returnedController');
 
     
 
@@ -51,7 +52,7 @@ app.use('/user', usersController);
 
  app.use('/book', booksController);
 // app.use('/magazines', magazinesControllers);
-// app.use('/returns', returnsControllers);
+app.use('/returned', returnedController);
 app.use('/issued', issuedController);
 
 app.listen(3000, () => {
