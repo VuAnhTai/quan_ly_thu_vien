@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
         var vm = {
             magazines: rows
         };
-        console.log(vm);
         res.render('magazines/magazines_view', vm);
     });
 });
