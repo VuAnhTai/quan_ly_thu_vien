@@ -1,0 +1,135 @@
+<form action="" method="POST" role="form">
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            3T_LIBRARY
+                            <small>Control Panel</small>
+                        </h1>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                            <div class="col-sm-8">
+                                <a style="text-decoration: none; color: inherit;" href="Users_view.php">
+                                    <h1 style="margin-top: 0px">
+                                        <i class="fa fa-file-word-o"></i> Magazines
+                                    </h1>
+                                </a>
+                            </div>
+                    </div>
+                    <p></p>
+                <!-- table detail-->
+                <div class="col-xs-12 detail_view ">
+                    <div class="panel panel-default">
+                        <!-- Edit this file to change the layout of the detail view form -->
+
+                        <a name="detail-view"></a>
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <strong>Magazines details</strong>
+                            </h3>
+                        </div>
+
+                        
+                            <hr class="hidden-xs hidden-md">
+
+                            <div class="row">
+                                <!-- form inputs -->
+                                <div class="col-md-8 col-lg-9" id="Users_dv_form">
+                                    <fieldset class="form-horizontal">
+
+                                        {{!-- <div class="form-group">
+                                            <hr class="hidden-md hidden-lg">
+                                            <label for="id" class="control-label col-lg-3">ID</label>
+                                            <div class="col-lg-9">
+                                                <div class="form-control-static" id="id">1</div>
+                                            </div>
+                                        </div> --}}
+
+                                         <div class="form-group">
+                                            <hr class="hidden-md hidden-lg">
+                                            <label for="Type" class="control-label col-lg-3">Type</label>
+                                            <div class="col-lg-9">
+                                                <input maxlength="40" type="text" class="form-control" name="Type" id="Type" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <hr class="hidden-md hidden-lg">
+                                            <label for="Name" class="control-label col-lg-3">Name</label>
+                                            <div class="col-lg-9">
+                                                <input maxlength="140" type="text" class="form-control" name="Name" id="Name" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <hr class="hidden-md hidden-lg">
+                                            <label for="Date_Of_Receipt" class="control-label col-lg-3">Date Of Receipt</label>
+                                            <div class="col-lg-9">
+                                                <input maxlength="40" type="Date" class="form-control" name="Date_Of_Receipt" id="Date_Of_Receipt" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <hr class="hidden-md hidden-lg">
+                                            <label for="Date_Published" class="control-label col-lg-3">Date Published</label>
+                                            <div class="col-lg-9">
+                                                <input maxlength="40" type="Date" class="form-control" name="Date_Published" id="Date_Published" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <hr class="hidden-md hidden-lg">
+                                            <label for="Pages" class="control-label col-lg-3">Pages</label>
+                                            <div class="col-lg-9">
+                                                <input maxlength="140" type="text" class="form-control" name="Pages" id="Pages" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <hr class="hidden-md hidden-lg">
+                                            <label for="Price" class="control-label col-lg-3">Price</label>
+                                            <div class="col-lg-9">
+                                                <input maxlength="140" type="text" class="form-control" name="Price" id="Price" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <hr class="hidden-md hidden-lg">
+                                            <label for="Publisher" class="control-label col-lg-3">Publisher</label>
+                                            <div class="col-lg-9">
+                                                <input maxlength="140" type="text" class="form-control" name="Publisher" id="Publisher" value="">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <!-- DV action buttons -->
+                                <hr class="hidden-md hidden-lg">
+                                <div class="col-md-4 col-lg-3" id="Users_dv_action_buttons">
+                                    <div class="btn-toolbar" style="margin-top: 0px;">
+                                         <div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+                                            <a href="/magazines" class="btn btn-default" id="deselect" name="deselect_x" value="1" >
+                                                <i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+                                        </div>
+                                        <p></p>
+                                        <div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+                                            <a href ="/magazines/detail" class="btn btn-success btn-lg">
+                                                <i class="glyphicon glyphicon-plus-sign"></i> Save New</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- child records -->
+                            <hr>
+                        
+                        </div>
+                        <!-- /div class="panel-body" -->
+                    </div>
+                </div>
+                <!-- /table detail-->
+            </div>
+</form>
