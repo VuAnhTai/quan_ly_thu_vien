@@ -177,7 +177,7 @@
                                                                     Status </th>
                                                             </tr>
                                                         </thead>
-                                                        {{#with user}}
+                                                        {{#each issued}}
                                                         <tbody>
                                                             <tr>
                                                                 <td class="text-center view-on-click">
@@ -186,15 +186,18 @@
                                                                         <i class="glyphicon glyphicon-new-window hspacer-md"></i>
                                                                     </a>
                                                                 </td>
-                                                                <td class="Users-Id" >{{id}}</td>
-                                                                <td class="Users-Membership_Number" >{{Membership_Number}}</td>
-                                                                <td class="Users-Name" >{{Name}}</td>
-                                                                <td class="Users-Contact" >{{Contact}}</td>
-                                                                <td class="Users-ID_Number" >{{ID_Number}}</td>
+                                                                <td class="Book_Issue-issue_id" id="Book_Issue-issue_id-1">{{id}}</td>
+                                                                        <td class="Book_Issue-Member" id="Book_Issue-Member-1">{{Name}}</td>
+                                                                        <td class="Book_Issue-Number" id="Book_Issue-Number-1">{{Membership_Number}}</td>
+                                                                        <td class="Book_Issue-Book_Number" id="Book_Issue-Book_Number-1">{{ISBN_NO}}</td>
+                                                                        <td class="Book_Issue-Book_Title" id="Book_Issue-Book_Title-1">{{Book_Title}}</td>
+                                                                        <td class="Book_Issue-Issue_Date" id="Book_Issue-Issue_Date-1">02/24/2018</td>
+                                                                        <td class="Book_Issue-Return_Date" id="Book_Issue-Return_Date-1">03/4/2018</td>
+                                                                        <td class="Book_Issue-Status" id="Book_Issue-Status-1">{{Status}}</td>
 
                                                             </tr>
                                                         </tbody>
-                                                        {{/with}}
+                                                        {{/each}}
                                                         <tfoot>
                                                             <tr>
                                                                 <td colspan="9">
@@ -253,6 +256,7 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            {{#each return}}
                                                             <tr>
                                                                 <td class="text-center view-on-click">
                                                                     <a href="#" onclick="Return_BookMemberGetRecords({ Verb: 'open', ChildID: '1'}); return false;"
@@ -260,16 +264,17 @@
                                                                         <i class="glyphicon glyphicon-new-window hspacer-md"></i>
                                                                     </a>
                                                                 </td>
-                                                                <td class="Return_Book-Book_Number" id="Return_Book-Book_Number-1">62781733</td>
-                                                                <td class="Return_Book-Book_Title" id="Return_Book-Book_Title-1">River Between</td>
+                                                                <td class="Return_Book-Book_Number" id="Return_Book-Book_Number-1">{{ISBN_NO}}</td>
+                                                                <td class="Return_Book-Book_Title" id="Return_Book-Book_Title-1">{{Book_Title}}</td>
                                                                 <td class="Return_Book-Issue_Date" id="Return_Book-Issue_Date-1">02/24/2018</td>
                                                                 <td class="Return_Book-Due_Date" id="Return_Book-Due_Date-1">02/24/2018</td>
                                                                 <td class="Return_Book-Return_Date" id="Return_Book-Return_Date-1">03/04/2018</td>
-                                                                <td class="Return_Book-Member" id="Return_Book-Member-1">Kelvin Guma</td>
-                                                                <td class="Return_Book-Number" id="Return_Book-Number-1">1231</td>
-                                                                <td class="Return_Book-Fine text-right" id="Return_Book-Fine-1">50.00</td>
-                                                                <td class="Return_Book-Status" id="Return_Book-Status-1">cleared</td>
+                                                                <td class="Return_Book-Member" id="Return_Book-Member-1">{{Name}}</td>
+                                                                <td class="Return_Book-Number" id="Return_Book-Number-1">{{Membership_Number}}</td>
+                                                                <td class="Return_Book-Fine text-right" id="Return_Book-Fine-1">{{Fine}}</td>
+                                                                <td class="Return_Book-Status" id="Return_Book-Status-1">{{Status}}</td>
                                                             </tr>
+                                                            {{/each}}
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
