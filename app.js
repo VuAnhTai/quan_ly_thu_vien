@@ -19,7 +19,8 @@ var usersController = require('./controllers/usersController'),
     magazinesController = require('./controllers/magazinesController'),
     accountController = require('./controllers/accountController'),
     booksController = require('./controllers/booksController'),
-    issuedController = require('./controllers/issuedController');
+    issuedController = require('./controllers/issuedController'),
+    returnedController = require('./controllers/returnedController');
     
 
 var app = express();
@@ -80,6 +81,7 @@ app.use('/user', restrict, usersController);
 app.use('/magazine', restrict, magazinesController);
 app.use('/book', restrict, booksController);
 app.use('/issued', restrict, issuedController);
+app.use('/returned', restrict, returnedController);
 // app.use('/returns', returnsControllers);
 
 app.use(handle404MDW);
