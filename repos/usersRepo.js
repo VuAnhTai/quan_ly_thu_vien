@@ -56,3 +56,8 @@ exports.search = (stringSearch) => {
 	var sql = `SELECT * FROM users WHERE Name LIKE '%${stringSearch}%'`
     return db.save(sql);
 }
+
+exports.delete = (id) => {
+    var sql = `delete from users where id = ${id}`;
+    return db.save(sql);
+}
