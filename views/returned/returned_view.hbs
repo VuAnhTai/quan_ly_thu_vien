@@ -1,303 +1,296 @@
 <div id="page-wrapper">
+            <div class="container-fluid">
 
-    <div class="container-fluid">
-
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    3T_LIBRARY
-                    <small>Control Panel </small>
-                </h1>
-
+                <!-- Page Heading -->
                 <div class="row">
-                    <div class="col-sm-8">
-                        <a style="text-decoration: none; color: inherit;" href="#">
-                            <h1 style="margin-top: 0px">
-                               <img src="images/application_side_expand.png"> Returned
-                            </h1>
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="input-group" id="quick-search">
-                            <input type="text" id="SearchString" name="SearchString" value="" class="form-control" placeholder="Quick Search">
-                            <span class="input-group-btn">
-                                <button name="Search_x" value="1" id="Search" type="submit" class="btn btn-default" title="Quick Search">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                                <button name="ClearQuickSearch" value="1" id="ClearQuickSearch" type="submit" class="btn btn-default" title="Show All">
-                                    <i class="glyphicon glyphicon-remove-circle"></i>
-                                </button>
-                            </span>
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            3T_LIBRARY
+                            <small>Control Panel</small>
+                        </h1>
+
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <a style="text-decoration: none; color: inherit;" href="Users_view.php">
+                                    <h1 style="margin-top: 0px">
+                                        <img src="images/application_from_storage.png"> Returned
+                                    </h1>
+                                </a>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="input-group" id="quick-search">
+                                    <input type="text" id="SearchString" name="SearchString" value="" class="form-control" placeholder="Quick Search">
+                                    <span class="input-group-btn">
+                                        <button name="Search_x" value="1" id="Search" type="submit" class="btn btn-default" title="Quick Search">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+                                        <button name="ClearQuickSearch" value="1" id="ClearQuickSearch" type="submit" class="btn btn-default" title="Show All">
+                                            <i class="glyphicon glyphicon-remove-circle"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- /.row -->
-        <!-- bottons -->
-        <div id="top_buttons" class="hidden-print">
-            <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
-                <a href="returned/add" id="addNew" name="addNew_x" value="1" class="btn btn-success">
-                    <i class="glyphicon glyphicon-plus-sign"></i> Add New</a>
-                <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
-                    <i class="glyphicon glyphicon-print"></i> Print Preview</button>
-                <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
-                    <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
-                <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
-                    <i class="glyphicon glyphicon-filter"></i> Filter</button>
-                <button type="submit" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
-                    <i class="glyphicon glyphicon-remove-circle"></i> Show All</button>
-            </div>
-            <div class="btn-group btn-group-lg visible-md visible-lg selected_records hidden pull-left hspacer-lg">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
-                    <i class="glyphicon glyphicon-check"></i> More
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a href="#" id="selected_records_print_multiple_dv_sdv">
-                            <span class="">
-                                <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="selected_records_mass_delete">
-                            <span class="text-danger">
-                                <i class="glyphicon glyphicon-trash"></i> Delete</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="btn-group-vertical btn-group-lg visible-xs visible-sm all_records">
-                <button type="submit" id="addNew" name="addNew_x" value="1" class="btn btn-success">
-                    <i class="glyphicon glyphicon-plus-sign"></i> Add New</button>
-                <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
-                    <i class="glyphicon glyphicon-print"></i> Print Preview</button>
-                <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
-                    <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
-                <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
-                    <i class="glyphicon glyphicon-filter"></i> Filter</button>
-                <button type="submit" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
-                    <i class="glyphicon glyphicon-remove-circle"></i> Show All</button>
-            </div>
-            <div class="btn-group-vertical btn-group-lg visible-xs visible-sm selected_records hidden vspacer-lg">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
-                    <i class="glyphicon glyphicon-check"></i> More
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a href="#" id="selected_records_print_multiple_dv_sdv">
-                            <span class="">
-                                <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="selected_records_mass_delete">
-                            <span class="text-danger">
-                                <i class="glyphicon glyphicon-trash"></i> Delete</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="pull-right flip btn-group vspacer-md" id="tv-tools">
-                <button title="Previous column" type="button" class="btn btn-default tv-scroll" style="display: none;">
-                    <i class="glyphicon glyphicon-step-backward"></i>
-                </button>
-                <button title="Next column" type="button" class="btn btn-default tv-scroll" style="display: none;">
-                    <i class="glyphicon glyphicon-step-forward"></i>
-                </button>
-                <button title="Hide/Show columns" type="button" class="btn btn-default tv-toggle" data-toggle="collapse" data-target="#toggle-columns-container">
-                    <i class="glyphicon glyphicon-align-justify rotate90"></i>
-                </button>
-            </div>
-            <div class="clearfix"></div>
-            <div class="collapse" id="toggle-columns-container">
-                <div class="well pull-right flip" style="width: 100%; max-width: 600px;">
-                    <div class="row" id="toggle-columns">
-                        <div class="col-md-12">
-                            <button type="button" class="btn btn-default btn-block" id="show-all-columns">
-                                <i class="glyphicon glyphicon-check"></i> Show All</button>
+                <!-- /.row -->
+                <!-- bottons -->
+                <div id="top_buttons" class="hidden-print">
+                    <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
+                        <a href="returned/add" id="addNew" name="addNew_x" value="1" class="btn btn-success">
+                            <i class="glyphicon glyphicon-plus-sign"></i> Add New</a>
+                        <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
+                            <i class="glyphicon glyphicon-print"></i> Print Preview</button>
+                        <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
+                            <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
+                        <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
+                            <i class="glyphicon glyphicon-filter"></i> Filter</button>
+                        <button type="submit" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
+                            <i class="glyphicon glyphicon-remove-circle"></i> Show All</button>
+                    </div>
+                    <div class="btn-group btn-group-lg visible-md visible-lg selected_records hidden pull-left hspacer-lg">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
+                            <i class="glyphicon glyphicon-check"></i> More
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#" id="selected_records_print_multiple_dv_sdv">
+                                    <span class="">
+                                        <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="selected_records_mass_delete">
+                                    <span class="text-danger">
+                                        <i class="glyphicon glyphicon-trash"></i> Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-group-vertical btn-group-lg visible-xs visible-sm all_records">
+                        <button type="submit" id="addNew" name="addNew_x" value="1" class="btn btn-success">
+                            <i class="glyphicon glyphicon-plus-sign"></i> Add New</button>
+                        <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
+                            <i class="glyphicon glyphicon-print"></i> Print Preview</button>
+                        <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
+                            <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
+                        <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
+                            <i class="glyphicon glyphicon-filter"></i> Filter</button>
+                        <button type="submit" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
+                            <i class="glyphicon glyphicon-remove-circle"></i> Show All</button>
+                    </div>
+                    <div class="btn-group-vertical btn-group-lg visible-xs visible-sm selected_records hidden vspacer-lg">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
+                            <i class="glyphicon glyphicon-check"></i> More
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#" id="selected_records_print_multiple_dv_sdv">
+                                    <span class="">
+                                        <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="selected_records_mass_delete">
+                                    <span class="text-danger">
+                                        <i class="glyphicon glyphicon-trash"></i> Delete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pull-right flip btn-group vspacer-md" id="tv-tools">
+                        <button title="Previous column" type="button" class="btn btn-default tv-scroll" onclick="AppGini.TVScroll().less()" style="display: none;">
+                            <i class="glyphicon glyphicon-step-backward"></i>
+                        </button>
+                        <button title="Next column" type="button" class="btn btn-default tv-scroll" onclick="AppGini.TVScroll().more()" style="display: none;">
+                            <i class="glyphicon glyphicon-step-forward"></i>
+                        </button>
+                        <button title="Hide/Show columns" type="button" class="btn btn-default tv-toggle collapsed" data-toggle="collapse" data-target="#toggle-columns-container"
+                            aria-expanded="false">
+                            <i class="glyphicon glyphicon-align-justify rotate90"></i>
+                        </button>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="collapse" id="toggle-columns-container">
+                        <div class="well pull-right flip" style="width: 100%; max-width: 600px;">
+                            <div class="row" id="toggle-columns">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-default btn-block" id="show-all-columns">
+                                        <i class="glyphicon glyphicon-check"></i> Show All</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Return_Book-Book_Number" checked="">Book Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Return_Book-Book_Title" checked="">Book Title</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Return_Book-Issue_Date" checked=""> Issue Date</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Return_Book-Due_Date" checked=""> Due Date</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Return_Book-Return_Date" checked=""> Return Date</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Return_Book-Member" checked=""> Member</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Return_Book-Number" checked=""> Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Return_Book-Fine" checked=""> Fine</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" data-col="Return_Book-Status" checked=""> Status</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-default btn-block collapsed" id="toggle-columns-collapser"
+                                        data-toggle="collapse" data-target="#toggle-columns-container" aria-expanded="false">
+                                        <i class="glyphicon glyphicon-ok"></i> Ok</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-col="Return_Book-Book_Number" checked=""> Book Number</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-col="Return_Book-Book_Title" checked=""> Book Title</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-col="Return_Book-Issue_Date" checked=""> Issue Date</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-col="Return_Book-Due_Date" checked=""> Due Date</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-col="Return_Book-Return_Date" checked=""> Return Date</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-col="Return_Book-Member" checked=""> Member</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-col="Return_Book-Number" checked=""> Number</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-col="Return_Book-Fine" checked=""> Fine</label>
-                                </div>
-                            </div>
-                             <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-col="Return_Book-Status" checked=""> Status</label>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-default btn-block" id="toggle-columns-collapser"
-                                data-toggle="collapse" data-target="#toggle-columns-container">
-                                <i class="glyphicon glyphicon-ok"></i> Ok</button>
+                    </div>
+                    <div class="clearfix"></div>
+                <!-- /bottons -->
+                <!-- table -->
+
+                <div class="table_view col-xs-12 ">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th style="width: 18px;" class="text-center">
+                                        <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
+                                    </th>
+                                    <th class="Return_Book-Book_Number">
+                                        <a href="#" class="TableHeader">Book Number
+                                        </a>
+                                    </th>
+                                    <th class="Return_Book-Book_Tile">
+                                        <a href="#" class="TableHeader">Book Title
+                                        </a>
+                                    </th>
+                                    <th class="Return_Book-Issue_Date">
+                                        <a href="#" class="TableHeader">Issue Date</a>
+                                    </th>
+                                    <th class="Return_Book-Due_Date">
+                                        <a href="#" class="TableHeader">Due Date</a>
+                                    </th>
+                                    <th class="Return_Book-Return_Date">
+                                        <a href="#" class="TableHeader">Return Book</a>
+                                    </th>
+                                    <th class="Return_Book-Member">
+                                        <a href="#" class="TableHeader">Member</a>
+                                    </th>
+                                    <th class="Return_Book-Number">
+                                        <a href="#" class="TableHeader">Number</a>
+                                    </th>
+                                    <th class="Return_Book-Fine">
+                                        <a href="#" class="TableHeader">Fine</a>
+                                    </th>
+                                    <th class="Return_Book-Status">
+                                        <a href="#" class="TableHeader">Status</a>
+                                    </th>
+                
+                                </tr>
+                
+                            </thead>
+                
+                            <tbody>
+                                <!-- tv data below -->
+                               {{#each return_book}}
+                                 <tr>
+                                    <td class="text-center">
+                                        <input class="hidden-print record_selector" type="checkbox" id="record_selector_1" name="record_selector[]" value="{{id}}">
+                                    </td>
+                
+                                    <td id="Return_Book-Book_Number-1" class="Return_Book-Book_Number">
+                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Book_Number}}</a>
+                                    </td>
+                                    <td id="Return_Book-Book_Tile-1" class="Return_Book-Book_Tile">
+                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Book_Tile}}</a>
+                                    </td>
+                                    <td id="Return_Book-Issue_Date-1" class="Return_Book-Issue_Date">
+                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Issue_Date}}</a>
+                                    </td>
+                                    <td id="Return_Book-Due_Date-1" class="Return_Book-Due_Date">
+                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Due_Date}}</a>
+                                    </td>
+                                    <td id="Return_Book-Return_Date-1" class="Return_Book-Return_Date">
+                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Return_Date}}</a>
+                                    </td>
+                                    <td id="Return_Book-Member-1" class="Return_Book-Member">
+                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Member}}</a>
+                                    </td>
+                                    <td id="Return_Book-Number-1" class="Return_Book-Number">
+                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Number}}</a>
+                                    </td>
+                                    <td id="Return_Book-Fine-1" class="Return_Book-Fine">
+                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Fine}}</a>
+                                    </td>
+                                    <td id="Return_Book-Status-1" class="Return_Book-Status">
+                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Status}}</a>
+                                    </td>
+                                </tr>     
+                               {{/each}}                   
+                                <!-- tv data above -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="10">Records 1 to 2 of 2</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="row pagination-section">
+                        <div class="col-xs-4 col-md-3 col-lg-2 vspacer-lg">
+                            <button onclick="document.myform.SelectedID.value = ''; document.myform.NoDV.value = 1; return true;" type="submit" name="Previous_x"
+                                id="Previous" value="1" class="btn btn-default btn-block">
+                                <i class="glyphicon glyphicon-chevron-left"></i>
+                                <span class="hidden-xs">Previous</span>
+                            </button>
+                        </div>
+                        <div class="col-xs-4 col-md-4 col-lg-2 col-md-offset-1 col-lg-offset-3 text-center vspacer-lg"></div>
+                        <div class="col-xs-4 col-md-3 col-lg-2 col-md-offset-1 col-lg-offset-3 text-right vspacer-lg">
+                            <button class="hidden-xs">Next</span>
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="clearfix"></div>
-            </div>
-
-            <p></p>
-        </div>
-        <!-- /bottons -->
-        <!-- table -->
-        <div class="table_view col-xs-12">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th style="width: 18px;" class="text-center">
-                                <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
-                            </th>
-                            <th class="Return_Book-Book_Number">
-                                <a href="#" class="TableHeader">Book Nember</a>
-                            </th>
-                            <th class="Return_Book-Book_Title">
-                                <a href="#" class="TableHeader">Book Title</a>
-                            </th>
-                            <th class="Return_Book-Issue_Date">
-                                <a href="#" class="TableHeader">Issue Date</a>
-                            </th>
-                            <th class="Return_Book-Due_Date">
-                                <a href="#" class="TableHeader">Due Date</a>
-                            </th>
-                            <th class="Return_Book-Return_Date">
-                                <a href="#" class="TableHeader">Return Date</a>
-                            </th>
-                            <th class="Return_Book-Member">
-                                <a href="#" class="TableHeader">Member</a>
-                            </th>
-                            <th class="Return_Book-Number">
-                                <a href="#" class="TableHeader">Number</a>
-                            </th>
-                            <th class="Return_Book-Fine">
-                                <a href="#" class="TableHeader">Fine</a>
-                            </th>
-                            <th class="Return_Book-Status">
-                                <a href="#" class="TableHeader">Status</a>
-                            </th>
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-                        <!-- tv data below -->
-                        {{#each return_book}}
-                            <tr>
-                            <td class="text-center">
-                                <input class="hidden-print record_selector" type="checkbox" id="record_selector_1" name="record_selector[]"
-                                    value="1">
-                            </td>
-
-
-                            <td id="Return_Book-Book_Number-1" class="Return_Book-Book_Number">
-                                <a href="#" style="display: block; padding:0px;">{{Book Nember}}</a>
-                            </td>
-                            <td id="Return_Book-Book_Title-1" class="Return_Book-Book_Title">
-                                <a href="#" style="display: block; padding:0px;">{{Book Title}}</a>
-                            </td>
-                            <td id="Return_Book-Issue_Date-1" class="Return_Book-Issue_Date">
-                                <a href="#" style="display: block; padding:0px;">{{Issue Date}}</a>
-                            </td>
-                            <td id="Return_Book-Due_Date-1" class="Return_Book-Due_Date">
-                                <a href="#" style="display: block; padding:0px;">{{Due Date}}</a>
-                            </td>
-                            <td id="Return_Book-Return_Date-1" class="Return_Book-Return_Date">
-                                <a href="#" style="display: block; padding:0px;">{{Return Date}}</a>
-                            </td>
-                                <td id="Return_Book-Member-1" class="Return_Book-Member">
-                                <a href="#" style="display: block; padding:0px;">{{Member}}</a>
-                            </td>
-                            <td id="Return_Book-Number-1" class="Return_Book-Number">
-                                <a href="#" style="display: block; padding:0px;">{{Number}}</a>
-                            </td>
-                            <td id="Return_Book-Fine-1" class="Return_Book-Fine">
-                                <a href="#" style="display: block; padding:0px;">{{Fine}}</a>
-                            </td>
-                              <td id="Return_Book-Status-1" class="Return_Book-Status">
-                                <a href="#" style="display: block; padding:0px;">{{Status}}</a>
-                            </td>
-
-                        </tr>
-                        {{/each}}
-                        <!-- tv data above -->
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="11">Records 1 to 1 of 1</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div class="row pagination-section">
-                <div class="col-xs-4 col-md-3 col-lg-2 vspacer-lg">
-                    <button type="submit" name="Previous_x"
-                        id="Previous" value="1" class="btn btn-default btn-block">
-                        <i class="glyphicon glyphicon-chevron-left"></i>
-                        <span class="hidden-xs">Previous</span>
-                    </button>
-                </div>
-                <div class="col-xs-4 col-md-4 col-lg-2 col-md-offset-1 col-lg-offset-3 text-center vspacer-lg"></div>
-                <div class="col-xs-4 col-md-3 col-lg-2 col-md-offset-1 col-lg-offset-3 text-right vspacer-lg">
-                    <button  type="submit" name="Next_x"
-                        id="Next" value="1" class="btn btn-default btn-block">
-                        <span class="hidden-xs">Next</span>
-                        <i class="glyphicon glyphicon-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- /table -->
-
+                <!-- /table -->
 
     </div>
-    <!-- /.container-fluid -->
-
-</div>
+ </div>
