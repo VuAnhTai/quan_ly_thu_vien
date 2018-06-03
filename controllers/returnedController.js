@@ -14,7 +14,12 @@ router.get('/', (req, res) => {
         var vm = {
             return_book: rows
         };
+<<<<<<< HEAD
         res.render('returned/returned_view', vm);       
+=======
+        console.log(vm);
+        res.render('returned/returned_view', vm);
+>>>>>>> c7700435129cf2dd385cccb39ce3fc73b4dba842
     });
 });
 
@@ -26,6 +31,16 @@ router.post('/add', (req, res) => {
         res.render('returned/returned_add');
     }).catch(err => {
         res.end('fail');
+    });
+});
+
+router.get('/edit', (req, res) => {
+    returnedRepo.single(req.query.id).then(rows => {
+        var vm = {
+            return_book: rows[0]
+        };
+        console.log(vm);
+        res.render('returned/returned_detail', vm);        
     });
 });
 

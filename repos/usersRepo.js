@@ -1,4 +1,5 @@
 var db = require('../fn/db');
+var config = require('../config/config');
 
 exports.loadAll = () => {
 	var sql = 'select * from users';
@@ -30,4 +31,28 @@ exports.update = user => {
 	where id = '${user.id}'`;
 	console.log(sql);
 	return db.save(sql);
+}
+
+exports.loadAllOffset = (offset) => {
+	var sql = `select * from users limit ${config.USER_PER_PAGE} offset ${offset}`;
+	return db.load(sql);
+}
+
+exports.countUsers = () => {
+	var sql = `select count(*) as total from users`;
+	return db.load(sql);
+}
+
+exports.book_issued = (id) => {
+    var sql = `SELECT book_issue.*, users.*, books.* FROM book_issue, users, books WHERE book_issue.Member = ${id} && book_issue.Member = users.id && books.id = book_issue.Book_Title`
+    return db.save(sql);
+}
+
+exports.book_return = (id) => {
+    var sql = `SELECT return_book.*, users.*, books.* FROM return_book, users, books WHERE return_book.Member = ${id} && return_book.Member = users.id && books.id = return_book.Book_Title`
+    return db.save(sql);
+}
+exports.search = (stringSearch) => {
+	var sql = `SELECT * FROM users WHERE Name LIKE '%${stringSearch}%'`
+    return db.save(sql);
 }

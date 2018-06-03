@@ -1,3 +1,4 @@
+
 var express = require('express');
 var magazinesRepo = require('../repos/magazinesRepo');
 
@@ -19,34 +20,21 @@ router.get('/', (req, res) => {
 });
 
 router.get('/add', (req, res) => {
-    res.render('magazines/magazines_add');
+    var vm = {
+        showAlert: false
+    };
+    res.render('magazines/magazines_add', vm);
 });
 
 router.post('/add', (req, res) => {
-    console.log(req.body);
     magazinesRepo.add(req.body).then(value => {
-        // var vm = {
-        //     showAlert: true
-        // };
-        res.render('magazines/magazines_add');
+        var vm = {
+            showAlert: true
+        };
+        res.render('magazines/magazines_add', vm);
     }).catch(err => {
         res.end('fail');
     });
 });
 
-
-router.get('/detail', (req, res) => {
-    res.render('magazines/magazines_detail');
-});
-
-router.post('/detail', (req, res) => {
-    magazinesRepo.add(req.body).then(value => {
-        // var vm = {
-        //     showAlert: true
-        // };
-        res.render('magazines/magazines_detail', vm);
-    }).catch(err => {
-        res.end('fail');
-    });
-});
 module.exports = router;
