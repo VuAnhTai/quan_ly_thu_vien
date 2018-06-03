@@ -9,11 +9,12 @@ router.get('/add', (req, res) => {
 
 
 router.get('/', (req, res) => {
+    //console.log("hello");
     returnedRepo.loadAll().then(rows => {
         var vm = {
             return_book: rows
         };
-        res.render('returned/returned_view', vm);
+        res.render('returned/returned_view', vm);       
     });
 });
 
