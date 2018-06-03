@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
         var vm = {
             return_book: rows
         };
+        console.log(vm);
         res.render('returned/returned_view', vm);
     });
 });
@@ -25,6 +26,16 @@ router.post('/add', (req, res) => {
         res.render('returned/returned_add');
     }).catch(err => {
         res.end('fail');
+    });
+});
+
+router.get('/edit', (req, res) => {
+    returnedRepo.single(req.query.id).then(rows => {
+        var vm = {
+            return_book: rows[0]
+        };
+        console.log(vm);
+        res.render('returned/returned_detail', vm);        
     });
 });
 
