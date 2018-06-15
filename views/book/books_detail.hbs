@@ -1,4 +1,3 @@
-<form action="" method="POST" role="form">
     <div id="page-wrapper">
 
         <div class="container-fluid">
@@ -9,7 +8,7 @@
 
             <div class="addBook">
                 {{#with book}}
-                <form action="" method="POST" role="form">
+                <form method="POST" role="form">
                     <ul class="breadcrumb">
                         <li style="font-size: x-large">
                             <i class="fa fa-pencil fa-x"></i>
@@ -93,23 +92,12 @@
                     </div>
 
 
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary" formaction="/book/edit">Update</button>
+                    <button type="submit" class="btn btn-danger" formaction="/book/delete">Delete</button>
                     
-                    
-                    {{!-- <form id="frmRemoveItem" method="post" action="/cart/remove">
-                        <button type="submit" class="glyphicon glyphicon-remove ">Delete</button>
-                    </form> --}}
-                    <a href="/book" class="btn btn-success">Back</a>
-                </form>
+                        
 
 
-                {{!-- <form action="" method="POST" role="form">
-                    <input type="hidden" id="" name="id" value="{{id}}">
-                    <button type="submit" class="btn btn-danger">
-                        <span class="glyphicon glyphicon-remove"></span>
-                        Delete
-                    </button>
-                </form> --}}
                 {{/with}}
 
             </div>
@@ -119,4 +107,3 @@
         <!-- /.container-fluid -->
 
     </div>
-</form>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {{#section 'title'}}
 	About Us
 {{/section}}
@@ -45,9 +44,9 @@
                     <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
                         <a href="/book/add" id="addNew" name="addNew_x" value="1" class="btn btn-success">
                             <i class="glyphicon glyphicon-plus-sign"></i> Add New</a>
-                        <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
+                        <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default" onclick="printData()">
                             <i class="glyphicon glyphicon-print"></i> Print Preview</button>
-                        <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
+                        <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default" onclick="exportToExcel('books_table')">
                             <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
                         <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
                             <i class="glyphicon glyphicon-filter"></i> Filter</button>
@@ -202,7 +201,7 @@
                 <!-- table -->
                 <div class="table_view col-xs-12">
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
+                        <table id="books_table" class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th style="width: 18px;" class="text-center">
@@ -245,6 +244,7 @@
                             <tbody>
 
                                 <!-- tv data below -->
+                                
                                {{#each books}}
 									 <tr>
                                     <td class="text-center">
@@ -253,34 +253,34 @@
                                     </td>
 
                                     <td id="Books-ISBN_NO-1" class="Books-ISBN_NO">
-                                        <a href="book/edit?id={{id}}" style="display: block; padding:0px;">{{ISBN_NO}}</a>
+                                        <a href="book/detail?id={{id}}" style="display: block; padding:0px;">{{ISBN_NO}}</a>
                                     </td>
                                     <td id="Books-Book_Title-1" class="Users-Name">
-                                        <a href="book/edit?id={{id}}" style="display: block; padding:0px;">{{Book_Title}}</a>
+                                        <a href="book/detail?id={{id}}" style="display: block; padding:0px;">{{Book_Title}}</a>
                                     </td>
                                     <td id="Books-Book_Type-1" class="Books-Book_Type">
-                                        <a href="book/edit?id={{id}}" style="display: block; padding:0px;">{{Book_Type}}</a>
+                                        <a href="book/detail?id={{id}}" style="display: block; padding:0px;">{{Book_Type}}</a>
                                     </td>
                                     <td id="Books-Author_Name-1" class="Books-Author_Name ">
-                                        <a href="book/edit?id={{id}}" style="display: block; padding:0px;">{{Author_Name}}</a>
+                                        <a href="book/detail?id={{id}}" style="display: block; padding:0px;">{{Author_Name}}</a>
                                     </td>
                                     <td id="Books-Quantity-1" class="Books-Quantity text-right">
-                                        <a href="book/edit?id={{id}}" style="display: block; padding:0px;">{{Quantity}}</a>
+                                        <a href="book/detail?id={{id}}" style="display: block; padding:0px;">{{Quantity}}</a>
                                     </td>
                                     <td id="Books-Purchase_Date-1" class="Books-Purchase_Date ">
-                                        <a href="book/edit?id={{id}}" style="display: block; padding:0px;">{{Purchase_Date}}</a>
+                                        <a href="book/detail?id={{id}}" style="display: block; padding:0px;">{{Purchase_Date}}</a>
                                     </td>
                                     <td id="Books-Edition-1" class="Books-Edition ">
-                                        <a href="book/edit?id={{id}}" style="display: block; padding:0px;">{{Edition}}</a>
+                                        <a href="book/detail?id={{id}}" style="display: block; padding:0px;">{{Edition}}</a>
                                     </td>
                                     <td id="Books-Price-1" class="Books-Price text-right">
-                                        <a href="book/edit?id={{id}}" style="display: block; padding:0px;">{{Price}}</a>
+                                        <a href="book/detail?id={{id}}" style="display: block; padding:0px;">{{Price}}</a>
                                     </td>
                                     <td id="Books-Pages-1" class="Books-Pages text-right">
-                                        <a href="book/edit?id={{id}}" style="display: block; padding:0px;">{{Pages}}</a>
+                                        <a href="book/detail?id={{id}}" style="display: block; padding:0px;">{{Pages}}</a>
                                     </td>
                                     <td id="Books-Publisher-1" class="Books-Publisher ">
-                                        <a href="book/edit?id={{id}}" style="display: block; padding:0px;">{{Publisher}}</a>
+                                        <a href="book/detail?id={{id}}" style="display: block; padding:0px;">{{Publisher}}</a>
                                     </td>
 
                                 </tr>
@@ -319,326 +319,8 @@
             </div>
             <!-- /.container-fluid -->
 
-=======
-{{#section 'title'}}
-	About Us
-{{/section}}
-
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            3T_LIBRARY
-                            <small>Control Panel </small>
-                        </h1>
-
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <a style="text-decoration: none; color: inherit;" href="Users_view.php">
-                                    <h1 style="margin-top: 0px">
-                                        <i class="fa fa-book"></i> Books
-                                    </h1>
-                                </a>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="input-group" id="quick-search">
-                                    <input type="text" id="SearchString" name="SearchString" value="" class="form-control" placeholder="Quick Search">
-                                    <span class="input-group-btn">
-                                        <button name="Search_x" value="1" id="Search" type="submit" class="btn btn-default" title="Quick Search">
-                                            <i class="glyphicon glyphicon-search"></i>
-                                        </button>
-                                        <button name="ClearQuickSearch" value="1" id="ClearQuickSearch" type="submit" class="btn btn-default" title="Show All">
-                                            <i class="glyphicon glyphicon-remove-circle"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-                <!-- bottons -->
-                <div id="top_buttons" class="hidden-print">
-                    <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
-                        <a href="/book/add" id="addNew" name="addNew_x" value="1" class="btn btn-success">
-                            <i class="glyphicon glyphicon-plus-sign"></i> Add New</a>
-                        <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-print"></i> Print Preview</button>
-                        <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
-                        <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-filter"></i> Filter</button>
-                        <button type="submit" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-remove-circle"></i> Show All</button>
-                    </div>
-                    <div class="btn-group btn-group-lg visible-md visible-lg selected_records hidden pull-left hspacer-lg">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
-                            <i class="glyphicon glyphicon-check"></i> More
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="#" id="selected_records_print_multiple_dv_sdv">
-                                    <span class="">
-                                        <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="selected_records_mass_delete">
-                                    <span class="text-danger">
-                                        <i class="glyphicon glyphicon-trash"></i> Delete</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="btn-group-vertical btn-group-lg visible-xs visible-sm all_records">
-                        <button type="submit" id="addNew" name="addNew_x" value="1" class="btn btn-success">
-                            <i class="glyphicon glyphicon-plus-sign"></i> Add New</button>
-                        <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-print"></i> Print Preview</button>
-                        <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
-                        <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-filter"></i> Filter</button>
-                        <button type="submit" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-remove-circle"></i> Show All</button>
-                    </div>
-                    <div class="btn-group-vertical btn-group-lg visible-xs visible-sm selected_records hidden vspacer-lg">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
-                            <i class="glyphicon glyphicon-check"></i> More
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="#" id="selected_records_print_multiple_dv_sdv">
-                                    <span class="">
-                                        <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="selected_records_mass_delete">
-                                    <span class="text-danger">
-                                        <i class="glyphicon glyphicon-trash"></i> Delete</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pull-right flip btn-group vspacer-md" id="tv-tools">
-                        <button title="Previous column" type="button" class="btn btn-default tv-scroll" style="display: none;">
-                            <i class="glyphicon glyphicon-step-backward"></i>
-                        </button>
-                        <button title="Next column" type="button" class="btn btn-default tv-scroll" style="display: none;">
-                            <i class="glyphicon glyphicon-step-forward"></i>
-                        </button>
-                        <button title="Hide/Show columns" type="button" class="btn btn-default tv-toggle" data-toggle="collapse" data-target="#toggle-columns-container">
-                            <i class="glyphicon glyphicon-align-justify rotate90"></i>
-                        </button>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="collapse" id="toggle-columns-container">
-                        <div class="well pull-right flip" style="width: 100%; max-width: 600px;">
-                            <div class="row" id="toggle-columns">
-                                <div class="col-md-12">
-                                    <button type="button" class="btn btn-default btn-block" id="show-all-columns">
-                                        <i class="glyphicon glyphicon-check"></i> Show All</button>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Books-ISBN_NO" checked=""> ISBN NO</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Books-Book_Title" checked=""> Book Title</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Books-Book_Type" checked=""> Book Type</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Books-Author_Name" checked=""> Author Name</label>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Books-Quantity" checked=""> Quantity</label>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Books-Purchase_Date" checked=""> Purchase Date</label>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Books-Edition" checked=""> Edition</label>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Books-Price" checked=""> Price</label>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Books-Pages" checked=""> Pages</label>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" data-col="Books-Publisher" checked=""> Publisher</label>
-                                        </div>
-                                    </div>
-
-                                    <button type="button" class="btn btn-default btn-block" id="toggle-columns-collapser"
-                                        data-toggle="collapse" data-target="#toggle-columns-container">
-                                        <i class="glyphicon glyphicon-ok"></i> Ok</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <p></p>
-                </div>
-                <!-- /bottons -->
-                <!-- table -->
-                <div class="table_view col-xs-12">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th style="width: 18px;" class="text-center">
-                                        <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
-                                    </th>
-                                    <th class="Books-ISBN_NO">
-                                            <a href="#" class="TableHeader">ISBN NO</a>
-                                    </th>
-                                    <th class="Books-Book_Title">
-                                        <a href="#" class="TableHeader">Book Title</a>
-                                    </th>
-                                    <th class="Books-Book_Type">
-                                        <a href="#" class="TableHeader">Book Type</a>
-                                    </th>
-                                    <th class="Books-Author_Name">
-                                        <a href="#" class="TableHeader">Author Name</a>
-                                    </th>
-                                    <th class="Books-Quantity">
-                                        <a href="#" class="TableHeader">Quantity</a>
-                                    </th>
-                                    <th class="Books-Purchase_Date">
-                                        <a href="#" class="TableHeader">Purchase Date</a>
-                                    </th>
-                                    <th class="Books-Edition">
-                                        <a href="#" class="TableHeader">Edition</a>
-                                    </th>
-                                    <th class="Books-Price">
-                                        <a href="#" class="TableHeader">Price</a>
-                                    </th>
-                                    <th class="Books-Pages">
-                                        <a href="#" class="TableHeader">Pages</a>
-                                    </th>
-                                    <th class="Books-Publisher">
-                                        <a href="#" class="TableHeader">Publisher</a>
-                                    </th>
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-
-                                <!-- tv data below -->
-                               {{#each books}}
-									 <tr>
-                                    <td class="text-center">
-                                        <input class="hidden-print record_selector" type="checkbox" id="record_selector_1" name="record_selector[]"
-                                            value="1">
-                                    </td>
-
-                                    <td id="Books-ISBN_NO-1" class="Books-ISBN_NO">
-                                        <a href="#" style="display: block; padding:0px;">{{ISBN_NO}}</a>
-                                    </td>
-                                    <td id="Books-Book_Title-1" class="Users-Name">
-                                        <a href="#" style="display: block; padding:0px;">{{Book_Title}}</a>
-                                    </td>
-                                    <td id="Books-Book_Type-1" class="Books-Book_Type">
-                                        <a href="#" style="display: block; padding:0px;">{{Book_Type}}</a>
-                                    </td>
-                                    <td id="Books-Author_Name-1" class="Books-Author_Name ">
-                                        <a href="#" style="display: block; padding:0px;">{{Author_Name}}</a>
-                                    </td>
-                                    <td id="Books-Quantity-1" class="Books-Quantity text-right">
-                                        <a href="#" style="display: block; padding:0px;">{{Quantity}}</a>
-                                    </td>
-                                    <td id="Books-Purchase_Date-1" class="Books-Purchase_Date ">
-                                        <a href="#" style="display: block; padding:0px;">{{Purchase_Date}}</a>
-                                    </td>
-                                    <td id="Books-Edition-1" class="Books-Edition ">
-                                        <a href="#" style="display: block; padding:0px;">{{Edition}}</a>
-                                    </td>
-                                    <td id="Books-Price-1" class="Books-Price text-right">
-                                        <a href="#" style="display: block; padding:0px;">{{Price}}</a>
-                                    </td>
-                                    <td id="Books-Pages-1" class="Books-Pages text-right">
-                                        <a href="#" style="display: block; padding:0px;">{{Pages}}</a>
-                                    </td>
-                                    <td id="Books-Publisher-1" class="Books-Publisher ">
-                                        <a href="#" style="display: block; padding:0px;">{{Publisher}}</a>
-                                    </td>
-
-                                </tr>
-							   {{/each}}
-                                
-                                <!-- tv data above -->
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="11">Records 1 to 3 of 3</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div class="row pagination-section">
-                        <div class="col-xs-4 col-md-3 col-lg-2 vspacer-lg">
-                            <button type="submit" name="Previous_x"
-                                id="Previous" value="1" class="btn btn-default btn-block">
-                                <i class="glyphicon glyphicon-chevron-left"></i>
-                                <span class="hidden-xs">Previous</span>
-                            </button>
-                        </div>
-                        <div class="col-xs-4 col-md-4 col-lg-2 col-md-offset-1 col-lg-offset-3 text-center vspacer-lg"></div>
-                        <div class="col-xs-4 col-md-3 col-lg-2 col-md-offset-1 col-lg-offset-3 text-right vspacer-lg">
-                            <button  type="submit" name="Next_x"
-                                id="Next" value="1" class="btn btn-default btn-block">
-                                <span class="hidden-xs">Next</span>
-                                <i class="glyphicon glyphicon-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- /table -->
-
-
-            </div>
-            <!-- /.container-fluid -->
-
->>>>>>> c7700435129cf2dd385cccb39ce3fc73b4dba842
         </div>
+
+{{#section 'js'}}
+	<script src="/assets/js/print_saveCSV.js"></script>
+{{/section}}
