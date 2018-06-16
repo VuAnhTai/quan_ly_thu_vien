@@ -231,20 +231,25 @@
             allowClear: true
         });
     });
-    $('#member').on('change', function() {
-		$('#Number').text( this.value );
+    $('#Book_Title').on('change', function() {
+		$.post("http://localhost:3000/issued/book",
+        {
+            id: this.value,
+        },
+        function(data){
+		    $('#Book_Number').text(data);     
+        });
         
 	})
-    $('#Book_Title').on('change', function() {
+    $('#member').on('change', function() {
         
         $.post("http://localhost:3000/issued/user",
         {
             id: this.value,
         },
-        function(data,status){
-            alert("Data: " + data + "\nStatus: " + status);
+        function(data){
+		    $('#Number').text(data);     
         });
-		$('#Book_Number').text( this.value );
         
 	})
     

@@ -44,11 +44,18 @@ router.get('/test', (req, res) => {
     res.render('issued/test_ajax');
 })
 
-router.get('/user', (req, res) => {
-    console.log("hello");
-    var obj = {};
-	console.log('body: ' + JSON.stringify(req.body));
-	res.send(req.body);
+router.post('/user', (req, res) => {
+    basicRepo.searchById('users', req.body.id).then(rows => {
+        var number = rows[0].Membership_Number;       
+        res.send(number);
+    })
+})
+
+router.post('/book', (req, res) => {
+    basicRepo.searchById('books', req.body.id).then(rows => {
+        var ISBN_NO = rows[0].ISBN_NO;
+        res.send(ISBN_NO);
+    })
 })
 
 // router.get('/add', (req, res) => {

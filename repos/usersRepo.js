@@ -56,7 +56,7 @@ exports.book_return = (id) => {
 }
 exports.search = (stringSearch) => {
 	var sql = `SELECT * FROM users WHERE Name LIKE '%${stringSearch}%'`
-    return db.save(sql);
+    return db.load(sql);
 }
 
 exports.delete = (id) => {
