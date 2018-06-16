@@ -1,6 +1,7 @@
 var express = require('express');
 var issuedRepo = require('../repos/issuedRepo');
 var basicRepo = require('../repos/basicRepo');
+var yyyymmdd = require('yyyy-mm-dd');
 
 var router = express.Router();
 
@@ -9,6 +10,10 @@ var router = express.Router();
 
 router.get('/', (req, res) => {
     issuedRepo.loadAll().then(rows => {
+        for (var i = 0 ; i<rows.length ; i++){
+            rows[i].Issue_Date = yyyymmdd(rows[i].Issue_Date);
+            rows[i].Return_Date = yyyymmdd(rows[i].Return_Date);
+        }
         var vm = {
             issued: rows
         };
