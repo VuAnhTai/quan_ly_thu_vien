@@ -1,109 +1,109 @@
-    <div id="page-wrapper">
+<div id="page-wrapper">
 
-        <div class="container-fluid">
+    <div class="container-fluid">
 
-            <!-- Page Heading -->
+        <!-- Page Heading -->
 
-            <h2 style="text-align: center"></h2>
+        <h2 style="text-align: center"></h2>
 
-            <div class="addBook">
-                {{#with book}}
-                <form method="POST" role="form">
-                    <ul class="breadcrumb">
-                        <li style="font-size: x-large">
-                            <i class="fa fa-pencil fa-x"></i>
-                            <b> Book Detail</b>
-                        </li>
-                    </ul>
+        <div class="addBook">
+            {{#with book}}
+            <form method="POST" role="form">
+                <ul class="breadcrumb">
+                    <li style="font-size: x-large">
+                        <i class="fa fa-pencil fa-x"></i>
+                        <b> Book Detail</b>
+                    </li>
+                </ul>
 
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <label for="">ID</label>
-                                <input type="text" name="id" class="form-control" value="{{id}}" required="required" readonly="true">
-                            </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="">ID</label>
+                            <input type="text" name="id" class="form-control" value="{{id}}" required="required" readonly="true">
                         </div>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <label for="">ISBN NO</label>
-                                <input type="text" name="ISBN_NO" class="form-control" value="{{ISBN_NO}}" required="required">
-                            </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="">ISBN NO</label>
+                            <input type="text" name="ISBN_NO" class="form-control" value="{{ISBN_NO}}" required="required">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <label for="">Book Title</label>
-                                <input type="text" name="Book_Title " class="form-control" value="{{Book_Title}}" required="required">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="">Book Title</label>
+                            <input type="text" name="Book_Title " class="form-control" value="{{Book_Title}}" required="required">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="">Book Type</label>
-                                <input type="text" name="Book_Type" class="form-control" value="{{Book_Type}}">
-                            </div>
-                            <div class="col-md-4">
-                                <label for="">Author Name</label>
-                                <input type="text" name="Author_Name" class="form-control" value="{{Author_Name}}">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Book Type</label>
+                            <input type="text" name="Book_Type" class="form-control" value="{{Book_Type}}">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Author Name</label>
+                            <input type="text" name="Author_Name" class="form-control" value="{{Author_Name}}">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="">Quantity</label>
-                                <input type="text" name="Quantity" class="form-control" value="{{Quantity}}">
-                            </div>
-                            <div class="col-md-4">
-                                <label for="">Purchase Date</label>
-                                <input type="date" name="Purchase_Date" class="form-control" value="{{Purchase_Date}}">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Quantity</label>
+                            <input type="text" name="Quantity" class="form-control" value="{{Quantity}}">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Purchase Date</label>
+                            <input type="date" name="Purchase_Date" class="form-control" value="{{Purchase_Date}}">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <label for="">Edition</label>
-                                <input type="number" name="Edition" class="form-control" value="{{Edition}}">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="">Price</label>
-                                <input type="number" name="Price" class="form-control" value="{{Price}}">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="">Pages</label>
-                                <input type="number" name="Pages" class="form-control" value="{{Pages}}">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="">Edition</label>
+                            <input type="number" name="Edition" class="form-control" value="{{Edition}}">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Price</label>
+                            <input type="number" name="Price" class="form-control" value="{{Price}}">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Pages</label>
+                            <input type="number" name="Pages" class="form-control" value="{{Pages}}">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <label for="">Publisher</label>
-                                <input type="text" name="Publisher" class="form-control" value="{{Publisher}}">
-                            </div>
-
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="">Publisher</label>
+                            <input type="text" name="Publisher" class="form-control" value="{{Publisher}}">
                         </div>
+
                     </div>
+                </div>
 
+                
 
-                    <button type="submit" class="btn btn-primary" formaction="/book/edit">Update</button>
-                    <button type="submit" class="btn btn-danger" formaction="/book/delete">Delete</button>
-                    
-                        
+                <button type="submit" class="btn btn-primary" formaction="/book/edit">Update</button>
+                <button type="submit" class="btn btn-danger" formaction="/book/delete">Delete</button>
 
-
-                {{/with}}
-
-            </div>
-            <!-- /.row -->
+            </form>
+            {{/with}}
 
         </div>
-        <!-- /.container-fluid -->
+        <!-- /.row -->
+
 
     </div>
+    <!-- /.container-fluid -->
+
+</div>

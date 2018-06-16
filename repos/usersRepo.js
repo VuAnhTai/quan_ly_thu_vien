@@ -49,7 +49,9 @@ exports.book_issued = (id) => {
 }
 
 exports.book_return = (id) => {
-    var sql = `SELECT return_book.*, users.*, books.* FROM return_book, users, books WHERE return_book.Member = ${id} && return_book.Member = users.id && books.id = return_book.Book_Title`
+	var sql = `SELECT return_book.*, users.*, books.* FROM return_book, users, books 
+	WHERE 
+	return_book.Member = ${id} && return_book.Member = users.id && books.id = return_book.Book_Title`
     return db.save(sql);
 }
 exports.search = (stringSearch) => {

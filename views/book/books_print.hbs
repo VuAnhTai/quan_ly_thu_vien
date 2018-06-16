@@ -1,0 +1,209 @@
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Dashboard
+                    <small>Thống kê tổng quát</small>
+                </h1>
+
+                <div class="row">
+                    <div class="col-sm-8">
+                        <a style="text-decoration: none; color: inherit;" href="#">
+                            <h1 style="margin-top: 0px">
+                                <i class="fa fa-user"></i> Users
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- bottons -->
+        <div id="top_buttons" class="hidden-print">
+            <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
+                <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-success" onclick="printData()">
+                    <i class="glyphicon glyphicon-print"></i> Print</button>
+                <a href="/book" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-remove-circle"></i> Back</a>
+            </div>
+            <div class="btn-group btn-group-lg visible-md visible-lg selected_records hidden pull-left hspacer-lg">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
+                    <i class="glyphicon glyphicon-check"></i> More
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="#" id="selected_records_print_multiple_dv_sdv">
+                            <span class="">
+                                <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="selected_records_mass_delete" onclick="document.getElementById(ZGjWKsT3KXVug4BImXCY).style.display='block';">
+                            <span class="text-danger">
+                                <i class="glyphicon glyphicon-trash"></i> Delete</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-group-vertical btn-group-lg visible-xs visible-sm all_records">
+                <button type="submit" id="addNew" name="addNew_x" value="1" class="btn btn-success">
+                    <i class="glyphicon glyphicon-plus-sign"></i> Add New</button>
+                <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-print"></i> Print Preview</button>
+                <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
+                <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-filter"></i> Filter</button>
+                <button type="submit" name="NoFilter_x" id="NoFilter" value="1" class="btn btn-default">
+                    <i class="glyphicon glyphicon-remove-circle"></i> Show All</button>
+            </div>
+            <div class="btn-group-vertical btn-group-lg visible-xs visible-sm selected_records hidden vspacer-lg">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="selected_records_more">
+                    <i class="glyphicon glyphicon-check"></i> More
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="#" id="selected_records_print_multiple_dv_sdv">
+                            <span class="">
+                                <i class="glyphicon glyphicon-print"></i> Print Preview Detail View</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="selected_records_mass_delete">
+                            <span class="text-danger">
+                                <i class="glyphicon glyphicon-trash"></i> Delete</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <p></p>
+        </div>
+        <!-- /bottons -->
+        <!-- table -->
+        <div class="table_view col-xs-12">
+            <div class="table-responsive">
+                <table id="books_table" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th style="width: 18px;" class="text-center">
+                                <input class="hidden-print" type="checkbox" title="Select all records" id="select_all_records">
+                            </th>
+                            <th class="Books-ISBN_NO">
+                                <a href="#" class="TableHeader">ISBN NO</a>
+                            </th>
+                            <th class="Books-Book_Title">
+                                <a href="#" class="TableHeader">Book Title</a>
+                            </th>
+                            <th class="Books-Book_Type">
+                                <a href="#" class="TableHeader">Book Type</a>
+                            </th>
+                            <th class="Books-Author_Name">
+                                <a href="#" class="TableHeader">Author Name</a>
+                            </th>
+                            <th class="Books-Quantity">
+                                <a href="#" class="TableHeader">Quantity</a>
+                            </th>
+                            <th class="Books-Purchase_Date">
+                                <a href="#" class="TableHeader">Purchase Date</a>
+                            </th>
+                            <th class="Books-Edition">
+                                <a href="#" class="TableHeader">Edition</a>
+                            </th>
+                            <th class="Books-Price">
+                                <a href="#" class="TableHeader">Price</a>
+                            </th>
+                            <th class="Books-Pages">
+                                <a href="#" class="TableHeader">Pages</a>
+                            </th>
+                            <th class="Books-Publisher">
+                                <a href="#" class="TableHeader">Publisher</a>
+                            </th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <!-- tv data below -->
+
+                        {{#each books}}
+                        <tr>
+                            <td class="text-center">
+                                <input class="hidden-print record_selector" type="checkbox" id="record_selector_1" name="record_selector[]" value="1">
+                            </td>
+
+                            <td id="Books-ISBN_NO-1" class="Books-ISBN_NO">
+                                <span style="display: block; padding:0px;">{{ISBN_NO}}</span>
+                            </td>
+                            <td id="Books-Book_Title-1" class="Users-Name">
+                                <span style="display: block; padding:0px;">{{Book_Title}}</span>
+                            </td>
+                            <td id="Books-Book_Type-1" class="Books-Book_Type">
+                                <span style="display: block; padding:0px;">{{Book_Type}}</span>
+                            </td>
+                            <td id="Books-Author_Name-1" class="Books-Author_Name ">
+                                <span style="display: block; padding:0px;">{{Author_Name}}</span>
+                            </td>
+                            <td id="Books-Quantity-1" class="Books-Quantity text-right">
+                                <span style="display: block; padding:0px;">{{Quantity}}</span>
+                            </td>
+                            <td id="Books-Purchase_Date-1" class="Books-Purchase_Date ">
+                                <span style="display: block; padding:0px;">{{Purchase_Date}}</span>
+                            </td>
+                            <td id="Books-Edition-1" class="Books-Edition ">
+                                <span style="display: block; padding:0px;">{{Edition}}</span>
+                            </td>
+                            <td id="Books-Price-1" class="Books-Price text-right">
+                                <span style="display: block; padding:0px;">{{Price}}</span>
+                            </td>
+                            <td id="Books-Pages-1" class="Books-Pages text-right">
+                                <span style="display: block; padding:0px;">{{Pages}}</span>
+                            </td>
+                            <td id="Books-Publisher-1" class="Books-Publisher ">
+                                <span style="display: block; padding:0px;">{{Publisher}}</span>
+                            </td>
+
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /table -->
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<div class="modal fade in" tabindex="-1" role="dialog" id="ZGjWKsT3KXVug4BImXCY" aria-hidden="false" style="display: none; padding-right: 15px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="document.getElementById(ZGjWKsT3KXVug4BImXCY).style.display='block';">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" style="width: 90%;">Confirm deleting multiple records</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger">
+                    <i class="glyphicon glyphicon-warning-sign"></i> 2 records will be deleted. Are you sure you want to do this?</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="ZGjWKsT3KXVug4BImXCY_footer_button_nZ33o9bbuV">
+                    <i class="glyphicon glyphicon-trash"></i> Yes, delete them!</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" id="ZGjWKsT3KXVug4BImXCY_footer_button_NCZeBKdwl8">
+                    <i class="glyphicon glyphicon-ok"></i> No, keep them.</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{#section 'js'}}
+<script src="/assets/js/print_saveCSV.js"></script> {{/section}}

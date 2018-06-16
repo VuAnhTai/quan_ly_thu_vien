@@ -46,6 +46,17 @@ router.get('/detail', (req, res) => {
     });
 });
 
+router.get('/print', (req, res) => {
+    booksRepo.loadAll().then(rows => {
+        for(var i = 0; i<rows.length; i++){
+            rows[i].Purchase_Date = yyyymmdd(rows[i].Purchase_Date);  
+        }
+        var vm = {
+            books: rows
+        };
+        res.render('book/books_print', vm);
+    });
+});
 
 router.post('/edit', (req, res) => {
     booksRepo.update(req.body).then(value => {
