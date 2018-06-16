@@ -13,7 +13,7 @@
                             <div class="col-sm-8">
                                 <a style="text-decoration: none; color: inherit;" href="Users_view.php">
                                     <h1 style="margin-top: 0px">
-                                        <img src="/imgs/application_side_expand.png"> Returned
+                                        <img src="/imgs/application_from_storage.png"> Returned
                                     </h1>
                                 </a>
                             </div>
@@ -39,9 +39,9 @@
                     <div class="btn-group btn-group-lg visible-md visible-lg all_records pull-left">
                         <a href="returned/add" id="addNew" name="addNew_x" value="1" class="btn btn-success">
                             <i class="glyphicon glyphicon-plus-sign"></i> Add New</a>
-                        <button type="submit" name="Print_x" id="Print" value="1" class="btn btn-default">
-                            <i class="glyphicon glyphicon-print"></i> Print Preview</button>
-                        <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default">
+                        <a href="returned/print" name="Print_x" id="Print" value="1" class="btn btn-default">
+                            <i class="glyphicon glyphicon-print"></i> Print Preview</a>
+                       <button type="submit" name="CSV_x" id="CSV" value="1" class="btn btn-default" onclick="exportToExcel('returned_table')" value="export">
                             <i class="glyphicon glyphicon-download-alt"></i> Save CSV</button>
                         <button type="submit" name="Filter_x" id="Filter" value="1" class="btn btn-default">
                             <i class="glyphicon glyphicon-filter"></i> Filter</button>
@@ -61,7 +61,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" id="selected_records_mass_delete">
+                                <a href="/delete" id="selected_records_mass_delete">
                                     <span class="text-danger">
                                         <i class="glyphicon glyphicon-trash"></i> Delete</span>
                                 </a>
@@ -188,7 +188,7 @@
 
                 <div class="table_view col-xs-12 ">
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
+                        <table class="table table-striped table-bordered table-hover" id="returned_table">
                             <thead>
                                 <tr>
                                     <th style="width: 18px;" class="text-center">
@@ -237,41 +237,36 @@
                                     </td>
                 
                                     <td id="Return_Book-Book_Number-1" class="Return_Book-Book_Number">
-                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Book_Number}}</a>
+                                        <a href="returned/edit?id={{id}}" style="display: block; padding:0px;">{{Book_Number}}</a>
                                     </td>
                                     <td id="Return_Book-Book_Tile-1" class="Return_Book-Book_Tile">
-                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Book_Tile}}</a>
+                                        <a href="returned/edit?id={{id}}" style="display: block; padding:0px;">{{Book_Title}}</a>
                                     </td>
                                     <td id="Return_Book-Issue_Date-1" class="Return_Book-Issue_Date">
-                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Issue_Date}}</a>
+                                        <a href="returned/edit?id={{id}}" style="display: block; padding:0px;">{{Issue_Date}}</a>
                                     </td>
                                     <td id="Return_Book-Due_Date-1" class="Return_Book-Due_Date">
-                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Due_Date}}</a>
+                                        <a href="returned/edit?id={{id}}" style="display: block; padding:0px;">{{Due_Date}}</a>
                                     </td>
                                     <td id="Return_Book-Return_Date-1" class="Return_Book-Return_Date">
-                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Return_Date}}</a>
+                                        <a href="returned/edit?id={{id}}" style="display: block; padding:0px;">{{Return_Date}}</a>
                                     </td>
                                     <td id="Return_Book-Member-1" class="Return_Book-Member">
-                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Member}}</a>
+                                        <a href="returned/edit?id={{id}}" style="display: block; padding:0px;">{{Member}}</a>
                                     </td>
                                     <td id="Return_Book-Number-1" class="Return_Book-Number">
-                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Number}}</a>
+                                        <a href="returned/edit?id={{id}}" style="display: block; padding:0px;">{{Number}}</a>
                                     </td>
                                     <td id="Return_Book-Fine-1" class="Return_Book-Fine">
-                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Fine}}</a>
+                                        <a href="returned/edit?id={{id}}" style="display: block; padding:0px;">{{Fine}}</a>
                                     </td>
                                     <td id="Return_Book-Status-1" class="Return_Book-Status">
-                                        <a href="returned/edit?id=1" style="display: block; padding:0px;">{{Status}}</a>
+                                        <a href="returned/edit?id={{id}}" style="display: block; padding:0px;">{{Status}}</a>
                                     </td>
                                 </tr>     
                                {{/each}}                   
                                 <!-- tv data above -->
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="10">Records 1 to 2 of 2</td>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                     <div class="row pagination-section">
@@ -294,3 +289,6 @@
 
     </div>
  </div>
+ {{#section 'js'}}
+    <script src="/assets/js/print_saveCSV.js"></script>
+{{/section}}

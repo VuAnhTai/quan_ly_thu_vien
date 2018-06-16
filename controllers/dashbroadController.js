@@ -23,7 +23,8 @@ router.get('/', (req, res) => {
             issued: issued
             
         }
-        res.render('index', vm);
+        console.log(vm);
+        res.render('home/index', vm);
     });
 })
 

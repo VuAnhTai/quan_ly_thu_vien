@@ -1,11 +1,42 @@
 var express = require('express');
-var booksRepo = require('../repos/booksRepo');
+var basicRepo = require('../repos/basicRepo');
 
 var router = express.Router();
 
 
 router.get('/', (req, res) => {
-    res.render('home/index');
+    var users = basicRepo.count('users');
+    var books = basicRepo.count('books');
+    var news = basicRepo.count('newspapers');
+    var magazines = basicRepo.count('magazines');
+    var issued = basicRepo.count('book_issue');
+    
+    Promise.all([users, books, news, magazines, issued]).then(([users, books, news, magazines, issued]) => {
+        var u=[], b=[], n=[], m=[], i=[];
+        u.push({
+            value: users[0].total,
+        })
+        b.push({
+            value: books[0].total
+        })
+        n.push({
+            value: news[0].total
+        })
+        m.push({
+            value: magazines[0].total
+        })
+        i.push({
+            value: issued[0].total
+        })
+        var vm = {
+            users: u[0],
+            books: b[0],
+            news: n[0],
+            magazines: m[0],
+            issued: i[0]
+        }
+        res.render('home/index', vm);
+    });
 });
 
 

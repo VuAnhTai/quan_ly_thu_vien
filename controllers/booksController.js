@@ -23,7 +23,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/add', (req, res) => {
-    console.log(req.body);
     booksRepo.add(req.body).then(value => {
         // var vm = {
         //     showAlert: true

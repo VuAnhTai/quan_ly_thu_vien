@@ -53,41 +53,41 @@
 
                                         <div class="form-group">
                                             <hr class="hidden-md hidden-lg">
-                                            <label for="Book Number" class="control-label col-lg-3">Book Number</label>
+                                            <label for="Book_Number" class="control-label col-lg-3">Book Number</label>
                                             <div class="col-lg-9">
-                                                <input maxlength="40" type="text" class="form-control" name="Book Number" id="Book Number" value="">
+                                                <input maxlength="40" type="number" class="form-control" name="Book_Number" id="Book_Number" value="">
                                             </div>
                                         </div>
                                         
                                         <div class="form-group">
                                             <hr class="hidden-md hidden-lg">
-                                            <label for="Book Title" class="control-label col-lg-3">Book Title</label>
+                                            <label for="Book_Title" class="control-label col-lg-3">Book Title</label>
                                             <div class="col-lg-9">
-                                                <input maxlength="40" type="text" class="form-control" name="Book Title" id="Book Title" value="">
+                                                <input maxlength="40" type="number" class="form-control" name="Book_Title" id="Book_Title" value="">
                                             </div>
                                         </div>
                                         
                                         <div class="form-group">
                                             <hr class="hidden-md hidden-lg">
-                                            <label for="Issued Date" class="control-label col-lg-3">Issued Date</label>
+                                            <label for="Issue_Date" class="control-label col-lg-3">Issue Date</label>
                                             <div class="col-lg-9">
-                                                <input maxlength="140" type="date" class="form-control" name="Issued Date" id="Issued Date" value="">
+                                                <input maxlength="140" type="date" class="form-control" name="Issue_Date" id="Issue_Date" value="">
                                             </div>
                                         </div>
                                        
                                        <div class="form-group">
                                             <hr class="hidden-md hidden-lg">
-                                            <label for="Due Date" class="control-label col-lg-3">Due Date</label>
+                                            <label for="Due_Date" class="control-label col-lg-3">Due Date</label>
                                             <div class="col-lg-9">
-                                                <input maxlength="140" type="date" class="form-control" name="Due Date" id="Due Date" value="">
+                                                <input maxlength="140" type="number" class="form-control" name="Due_Date" id="Due_Date" value="">
                                             </div>
                                         </div>
                                        
                                        <div class="form-group">
                                             <hr class="hidden-md hidden-lg">
-                                            <label for="Return Date" class="control-label col-lg-3">Return Date</label>
+                                            <label for="Return_Date" class="control-label col-lg-3">Return Date</label>
                                             <div class="col-lg-9">
-                                                <input maxlength="140" type="date" class="form-control" name="Return Date" id="Return Date" value="">
+                                                <input maxlength="140" type="date" class="form-control" name="Return_Date" id="Return_Date" value="">
                                             </div>
                                         </div>
 
@@ -132,13 +132,14 @@
                                 <div class="col-md-4 col-lg-3" id="Users_dv_action_buttons">
                                     <div class="btn-toolbar" style="margin-top: 0px;">
                                          <div class="btn-group-vertical btn-group-lg" style="width: 100%;">
-                                            <a href="/return" class="btn btn-default" id="deselect" name="deselect_x" value="1" >
+                                            <a href="/returned" class="btn btn-default" id="deselect" name="deselect_x" value="1" >
                                                 <i class="glyphicon glyphicon-chevron-left"></i> Back</a>
                                         </div>
                                         <p></p>
                                         <div class="btn-group-vertical btn-group-lg" style="width: 100%;">
-                                            <a href ="/return" class="btn btn-success btn-lg">
-                                                <i class="glyphicon glyphicon-plus-sign"></i> Save New</a>
+                                            <button type="submit" class="btn btn-success btn-lg" id="update" 
+                                                title="Save New">
+                                                <i class="glyphicon glyphicon-ok"></i> Save New</button>
                                         </div>
                                     </div>
                                 </div>
@@ -152,4 +153,6 @@
                 </div>
                 <!-- /table detail-->
             </div>
+        </div>
+
 </form>

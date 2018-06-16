@@ -13,7 +13,8 @@ var handle404MDW = require('./middle-wares/handle404'),
     handleLayoutMDW = require('./middle-wares/handleLayout'),
     restrict = require('./middle-wares/restrict');
 
-var usersController = require('./controllers/usersController'),
+var dashbroadController = require('./controllers/dashbroadController'),    
+    usersController = require('./controllers/usersController'),
     homeController = require('./controllers/homeController'),
     newspapersController = require('./controllers/newspapersController'),
     magazinesController = require('./controllers/magazinesController'),
@@ -82,8 +83,18 @@ app.use('/magazine', restrict, magazinesController);
 app.use('/book', restrict, booksController);
 app.use('/issued', restrict, issuedController);
 app.use('/returned', restrict, returnedController);
-// app.use('/returns', returnsControllers);
 
+// app.use('/returns', returnsControllers);
+app.get('/searching', function(req, res){
+
+    // input value from search
+    var val = req.query.search;
+    console.log(val);
+   
+   // testing the route
+   // res.send("WHEEE");
+   
+   });
 app.use(handle404MDW);
 
 app.listen(3000, () => {

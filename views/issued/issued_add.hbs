@@ -1,0 +1,252 @@
+
+{{#section 'css'}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
+{{/section}}
+
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">
+                    USBS
+                    <small>Library</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- table detail-->
+        <div class="col-xs-12 detail_view ">
+            <div class="panel panel-default">
+                <!-- Edit this file to change the layout of the detail view form -->
+
+                <a name="detail-view"></a>
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <strong>Issue details</strong>
+                    </h3>
+                </div>
+
+                <div class="panel-body" id="Book_Issue_dv_container">
+                    <!-- child links -->
+                    <div class="row">
+                        <div class="col-xs-12">
+
+
+                            <input type="hidden" id="Return_Book_hclink" value="Return_Book_view.php?filterer_Book_Number=&amp;">
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <hr class="hidden-xs hidden-md">
+
+
+                    <div class="row">
+                        <!-- form inputs -->
+                        <form action="" method="POST">
+                        <div class="col-md-10" id="Book_Issue_dv_form">
+                            <fieldset class="form-horizontal">
+
+                                <div class="form-group">
+                                    <hr class="hidden-md hidden-lg">
+                                    <label for="id" class="control-label col-md-3">ID</label>
+                                    <div class="col-md-9">
+                                        <div class="form-control-static" id="id"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <hr class="hidden-md hidden-lg">
+                                    <label for="issue_id" class="control-label col-md-3">Issue id</label>
+                                    <div class="col-md-9">
+                                    <div class="col-md-12">
+                                        <input maxlength="40" type="text" class="form-control" name="issue_id" id="issue_id" value="">
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <hr class="hidden-md hidden-lg">
+                                    <label for="Member" class="control-label col-md-3" data-parent_link="view_parent_modal">Member</label>
+   
+                                    <div class="col-md-9">
+                                        <div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;">
+                                            <div class="s2-example col-md-10" >
+                                                <select class="js-example-templating js-states form-control" id="member">
+                                                    {{#each users}} 
+                                                    <option value="{{id}}">{{Name}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <button type="button" class="btn btn-default view_parent hspacer-md" id="Users_view_parent"
+                                                title="View Member">
+                                                <i class="glyphicon glyphicon-eye-open"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-success add_new_parent hspacer-md" id="Users_add_new"
+                                                title="Add New Member">
+                                                <i class="glyphicon glyphicon-plus-sign"></i>
+                                            </button>
+                                            <span id="MemberLoading"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <hr class="hidden-md hidden-lg">
+                                    <label for="Number" class="control-label col-md-3">Number</label>
+                                    <div class="col-md-9">
+                                        <div class="form-control-static" id="Number"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <hr class="hidden-md hidden-lg">
+                                    <label for="Book_Title" class="control-label col-md-3" data-parent_link="view_parent_new_window">Book Title</label>
+                                    <div class="col-md-9">
+                                        <div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;">
+                                            <div class="s2-example col-md-10" >
+                                                <select class="js-example-templating js-states form-control" id="Book_Title">
+                                                    {{#each books}} 
+                                                        <option value="{{id}}">{{Book_Title}}</option>
+                                                    {{/each}}
+                                                    
+                                                </select>
+                                            </div>
+                                            <button type="button" class="btn btn-default view_parent hspacer-md" id="books_view_parent"
+                                                title="View Book Number">
+                                                <i class="glyphicon glyphicon-eye-open"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-success add_new_parent hspacer-md" id="books_add_new"
+                                                title="Add New Book Number">
+                                                <i class="glyphicon glyphicon-plus-sign"></i>
+                                            </button>
+                                            <span id="Book_NumberLoading"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <hr class="hidden-md hidden-lg">
+                                    <label for="Book_Number" class="control-label col-md-3">Book Number</label>
+                                    <div class="col-md-9">
+                                        <div class="form-control-static" id="Book_Number"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <hr class="hidden-md hidden-lg">
+                                    <label for="Issue_Date" class="control-label col-md-3">Issue Date</label>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                        <input type="date" name="Issue_Date" class="form-control" value="" required="required">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <hr class="hidden-md hidden-lg">
+                                    <label for="Return_Date" class="control-label col-md-3">Return Date</label>
+                                    <div class="col-md-9">
+                                        <div class="col-md-12">
+                                        <input type="date" name="Return_Date" class="form-control" value="" required="required">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <hr class="hidden-md hidden-lg">
+                                    <label for="Status" class="control-label col-md-3">Status</label>
+                                    <div class="col-md-9">
+                                        <div class="s2-example col-md-10" >
+                                            <select class="js-example-templating js-states form-control" id="Status">
+                                                <option value="">&nbsp;</option>
+                                                <option value="issued">issued</option>
+                                                <option value="returned">returned</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </div>
+
+                        <!-- DV action buttons -->
+                        <hr class="hidden-md hidden-lg">
+                        <div class="col-md-2" id="Book_Issue_dv_action_buttons">
+                            <div class="btn-toolbar" style="margin-top: 0px;">
+                                <div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+
+                                </div>
+                                <p></p>
+                                <div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+                                    <a href="/issued" class="btn btn-warning" id="deselect" name="deselect_x" value="1" onclick="$j('form').eq(0).attr('novalidate', 'novalidate'); document.myform.reset(); return true;"
+                                        title="Back">
+                                        <i class="glyphicon glyphicon-chevron-left"></i> Cancel</a>
+                                    <!-- DVPRINT_BUTTON -->
+
+                                </div>
+                                <p></p>
+                                <div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+                                    <button type="submit" class="btn btn-success" id="insert" name="Status" value="1" onclick="return Book_Issue_validateData();">
+                                        <i class="glyphicon glyphicon-plus-sign"></i> Save New</button>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- child records -->
+                <hr>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div id="Book_Issue-children" class="children-tabs"></div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /div class="panel-body" -->
+        </div>
+    </div>
+</div>
+</div>
+
+{{#section 'js'}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#Book_Title").select2({
+            placeholder: "Select a state",
+            allowClear: true
+        });
+    });
+     $(document).ready(function() {
+        $("#member").select2({
+            placeholder: "Select a state",
+            allowClear: true
+        });
+    });
+    $('#member').on('change', function() {
+		$('#Number').text( this.value );
+        
+	})
+    $('#Book_Title').on('change', function() {
+        
+        $.post("http://localhost:3000/issued/user",
+        {
+            id: this.value,
+        },
+        function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+		$('#Book_Number').text( this.value );
+        
+	})
+    
+</script> 
+{{/section}}

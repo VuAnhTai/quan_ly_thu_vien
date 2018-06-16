@@ -20,97 +20,135 @@
 	<!-- /.row -->
 
 	
-
 	<div class="row">
-		<div class="col-lg-3 col-md-6">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<div class="row">
-						<div class="col-xs-3">
-							<i class="fa fa-Book"></i>
-						</div>
-						<div class="col-xs-9 text-right">
-							<div class="huge">26</div>
-							<div>Books</div>
-						</div>
-					</div>
-				</div>
-				<a href="#">
-					<div class="panel-footer">
-						<span class="pull-left">Xem chi tiết</span>
-						<span class="pull-right"><i class="fa fa-Book"></i></span>
-						<div class="clearfix"></div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-6">
-			<div class="panel panel-green">
-				<div class="panel-heading">
-					<div class="row">
-						<div class="col-xs-3">
-							<i class="fa fa-group"></i>
-						</div>
-						<div class="col-xs-9 text-right">
-							<div class="huge">12</div>
-							<div>Members</div>
-						</div>
-					</div>
-				</div>
-				<a href="#">
-					<div class="panel-footer">
-						<span class="pull-left">Xem chi tiết</span>
-						<span class="pull-right"><i class="fa fa-group"></i></span>
-						<div class="clearfix"></div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-6">
-			<div class="panel panel-yellow">
-				<div class="panel-heading">
-					<div class="row">
-						<div class="col-xs-3">
-							<i class="fa fa-newspapers-o"></i>
-						</div>
-						<div class="col-xs-9 text-right">
-							<div>NewsPapers</div>
-						</div>
-					</div>
-				</div>
-				<a href="#">
-					<div class="panel-footer">
-						<span class="pull-left">Xem chi tiết</span>
-						<span class="pull-right"><i class="fa fa-newspapers-o"></i></span>
-						<div class="clearfix"></div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-6">
-			<div class="panel panel-yellow">
-				<div class="panel-heading">
-					<div class="row">
-						<div class="col-xs-3">
-							<i class="fa fa-file-word-o"></i>
-						</div>
-						<div class="col-xs-9 text-right">
-							<div>Magazines</div>
-						</div>
-					</div>
-				</div>
-				<a href="#">
-					<div class="panel-footer">
-						<span class="pull-left">Xem chi tiết</span>
-						<span class="pull-right"><i class="fa fa-file-word-o"></i></span>
-						<div class="clearfix"></div>
-					</div>
-				</a>
-			</div>
-		</div>
-	</div>
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+			{{#with books}}
+				
+              <h3>{{value}}</h3>
+			{{/with}}
+			
+              <p>Books</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-book"></i>
+            </div>
+            <a href="book" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+			{{#with users}}
+              <h3>{{value}}</h3>
+			{{/with}}
+
+              <p>Members</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-group"></i>
+            </div>
+            <a href="user" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+			{{#with news}}
+              <h3>{{value}}</h3>
+			{{/with}}
+
+              <p>NewsPapers</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-newspaper-o"></i>
+            </div>
+            <a href="newsPaper" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+			{{#with magazines}}
+              <h3>{{value}}</h3>
+			{{/with}}
+              <p>Magazines</p>
+            </div>
+            <div class="icon">
+              <i class="fa  fa-file-word-o"></i>
+            </div>
+            <a href="/magazine" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
 	
-	
+	<div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa  fa-space-shuttle"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Issued</span>
+              <span class="info-box-number">2</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i class="fa fa-thumbs-up"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Returned</span>
+              <span class="info-box-number">1</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="fa fa-thumbs-down"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Not Returned</span>
+              <span class="info-box-number">1</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i class="fa fa-calendar-check-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Date Today</span>
+              <span class="info-box-number">06/15/2018</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      </div>
 
 	<div class="row">
 		<div class="col-lg-12">
