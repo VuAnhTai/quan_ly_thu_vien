@@ -14,12 +14,9 @@ router.get('/', (req, res) => {
         var vm = {
             return_book: rows
         };
-<<<<<<< HEAD
-        res.render('returned/returned_view', vm);       
-=======
-        console.log(vm);
+        // res.render('returned/returned_view', vm);       
+        // console.log(vm);
         res.render('returned/returned_view', vm);
->>>>>>> c7700435129cf2dd385cccb39ce3fc73b4dba842
     });
 });
 

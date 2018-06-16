@@ -1,5 +1,6 @@
 var express = require('express');
 var userRepo = require('../repos/usersRepo');
+yyyymmdd = require('yyyy-mm-dd');
 var config = require('../config/config');
 var router = express.Router();
 
@@ -84,6 +85,20 @@ router.get('/edit', (req, res) => {
     var book_return = userRepo.book_return(req.query.id);
     
     Promise.all([user, book_issued, book_return]).then(([rowsUser, rowsIssued, rowsReturn]) => {
+        for(var i = 0 ;i<rowsReturn.length; i++){
+            rowsIssued[i].Issue_Date = yyyymmdd(rowsIssued[i].Issue_Date);
+            rowsIssued[i].Return_Date = yyyymmdd(rowsIssued[i].Return_Date);
+            // rowsReturn[i].Return_Date = yyyymmdd(rowsReturn[i].Return_Date);  
+        }
+        for(var i = 0 ;i<rowsReturn.length; i++){
+            rowsReturn[i].Issue_Date = yyyymmdd(rowsReturn[i].Issue_Date);
+            rowsReturn[i].Return_Date = yyyymmdd(rowsReturn[i].Return_Date);
+            // rowsReturn[i].Return_Date = yyyymmdd(rowsReturn[i].Return_Date);  
+        }
+        // for(var i = 0 ;i<rowsIssued.length; i++){
+        //     rowsIssued[i].Issue_Date = yyyymmdd(rowsReturn[i].Issue_Date);
+        //     rowsIssued[i].Return_Date = yyyymmdd(rowsReturn[i].Return_Date);  
+        // }
         var vm = {
             user: rowsUser[0],
             issued: rowsIssued,
